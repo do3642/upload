@@ -4,3 +4,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap");
 @import url(https://fonts.googleapis.com/css?family=Alex+Brush);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&display=swap");
+
+
+
+@keyframes radiusAni{
+    20%{
+      width: 12%;height: 20vh;
+    }
+  
+    50%,100%{
+      left: 0%;
+      width: 90%;height: 140vh;
+    }
+  }
+  
+@keyframes aboutTxtani1{
+
+    100%{
+      opacity: 0;
+      transform: translate(-40%,-170%) rotate(-25deg);
+    }
+  }
+  @keyframes aboutTxtani2{
+    100%{
+      opacity: 1;
+      transform: rotate(0);
+      right: 0;top: 0;
+    }
+  }
+  
+  @keyframes portani{
+  0%{
+    transform: rotate(-25deg) translate(-150%,-60%);
+  }
+    100%{
+  transform: rotate(-25deg) translate(0%,-60%);
+    }
+  }
+
+  @keyframes portbounce{
+      100%{
+        transform: translate(1.5%,-1.5%);
+      }
+  }
