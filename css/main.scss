@@ -1,0 +1,430 @@
+@import url("import.css");
+// @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Raleway&display=swap');
+%flexbasic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+%wihe100{
+  width: 100%;height: 100%;
+}
+
+*{
+  // color: #fff;
+  font-size: 16px;
+}
+body {
+ 
+  // overflow: hidden;
+}
+#wrap{
+  overflow: hidden;
+  background-color: #000;
+  width: 100%;
+  height: 100vh;
+}
+#Logo {
+ @extend %wihe100;
+  position: absolute;
+  top: 0; right: -25%; bottom: 0; left: -25%;
+  margin: auto;
+  display:block; 
+  fill: #333;
+  fill: url("#MyGradient");
+  stroke: #999;
+  stroke-miterlimit: 5;
+}
+
+.Animate-Draw {
+  fill-opacity: 0;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  // animation-iteration: 1;
+  
+  animation-name: DrawLine, FadeStroke, FillIn;
+  animation-duration: 4s, 1s, 1s;
+  animation-delay: 0s, 3.5s, 3.5s;
+}
+
+#Draw-Mark {
+  stroke-dashArray: 1100;
+  stroke-dashoffset: 1100; 
+}
+
+#Draw-Frame { 
+  animation-delay: 1s, 3.5s, 3.5s;
+  animation-duration: 3.5s, 1s, 1s; 
+  stroke-dashArray: 1500;
+  stroke-dashoffset: 1500;
+}
+
+#Draw-Text { 
+  animation-delay: 2s, 3.5s, 3.5s; 
+  animation-duration: 2s, 1s, 1s; 
+  stroke-dashArray: 300;
+  stroke-dashoffset: 300;
+  //animation-duration: 4s;
+}
+
+@keyframes DrawLine {
+  to { stroke-dashOffset: 0; }
+}
+
+@keyframes FadeStroke {
+  to { stroke-opacity: 0; }
+}
+
+@keyframes FillIn {
+  from { fill-opacity: 0; }
+  to { fill-opacity: 1; }
+}
+
+
+
+.drawsvg{
+  width: 100%;
+  height: 200px;
+
+}
+.stroke {
+  stroke: #fff;
+  stroke-width: 1px;
+  stroke-dasharray: 0 250;
+  stroke-opacity: 1;
+  fill: none;
+  -webkit-animation: stroke_offset 8s forwards; animation: stroke_offset 8s forwards; -webkit-animation-timing-function: cubic-bezier(.25, .46, .45, .94);
+  animation-timing-function: cubic-bezier(.25, .46, .45, .94) 
+}
+@-webkit-keyframes stroke_offset{
+  25% {stroke-dasharray: 0 250; stroke-opacity: 1 
+  }
+   50%, 75% {
+     stroke-dasharray: 250 0; stroke-opacity: .75 
+    }
+     55%, 70% {
+       stroke-dasharray: 250 0; stroke-opacity: 0
+      } 
+      100%{
+        stroke-dasharray: 250 0; stroke-opacity: 0
+      }
+} 
+@keyframes stroke_offset { 
+   25% {stroke-dasharray: 0 250; stroke-opacity: 1 
+  }
+   50%, 75% {
+     stroke-dasharray: 250 0; stroke-opacity: .75 
+    }
+     55%, 70% {
+       stroke-dasharray: 250 0; stroke-opacity: 0
+      } 
+      100%{
+        stroke-dasharray: 250 0; stroke-opacity: 0
+      }
+}
+.fill {
+  fill: #fff;
+   fill-opacity: 0;
+   -webkit-animation: fill_offset 8s 1s forwards;
+   animation: fill_offset 8s 1s forwards;
+   -webkit-animation-timing-function: cubic-bezier(.25, .46, .45, .94);
+   animation-timing-function: cubic-bezier(.25, .46, .45, .94)
+  } 
+  @-webkit-keyframes fill_offset {
+    25%, 35% { fill-opacity: 0; } 
+    50%, 70%,100% { fill-opacity: 1 } 
+  }
+   @keyframes fill_offset { 
+     25%, 35% { fill-opacity: 0;} 
+     50%, 70%,100% { fill-opacity: 1; } 
+     
+  } 
+  @keyframes fill_offset2 { 
+    0%,25%, 35% { fill-opacity: 0;opacity: 0;} 
+    50%, 70%,100% { fill-opacity: 1;opacity: 1;stroke: none; } 
+ } 
+  // @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=DM+Mono&family=DM+Serif+Display&display=swap');
+  // @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&display=swap');
+#fade-text {
+      
+     
+        text:nth-of-type(1){
+          font-size: 2.5em;
+          font-family: 'Chakra Petch', sans-serif;
+          letter-spacing: 10px;
+        }  
+        text:nth-of-type(2){
+          font-size: 2em;
+          font-family: 'Noto Sans KR', sans-serif;
+          letter-spacing: 10px;
+          animation: fill_offset2 8s forwards;
+        }
+    } 
+  
+// @import url(https://fonts.googleapis.com/css?family=Alex+Brush);
+// @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Noto+Serif+KR&display=swap');
+/*# sourceMappingURL=main.scss.map */
+
+@keyframes btnani{
+  0%,50%{opacity: 0;}
+
+  100%{opacity: 1;}
+}
+.btn{
+  @extend %flexbasic;
+
+  width: 170px;height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  border: none;
+  border:1px solid #fff;
+  
+  color: #fff;
+  font-weight: bold;
+  background-color: #000;
+  
+  position: absolute;bottom: 20%;left: 50%;
+  transform: translate(-50%,0);
+  font-size: 1.2em;
+  animation: btnani 8s forwards;
+  transition: .5s;
+  cursor: pointer;
+}
+.btn:hover{
+  background: #fff; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to bottom, #F7D696, #CEA058); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to bottom, #F7D696, #CEA058); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  color: #333;
+ 
+  border: none;
+}
+picture{
+  max-width: 150px;height: 130px;
+  position: absolute;left: 50%;top: 45%;
+  transform: translate(-50%,-50%);
+}
+picture img{
+  width: 100%;
+  height: 100%;
+}
+
+
+.container{
+  position: relative;
+}
+nav{
+  overflow: hidden;
+  position: absolute;right: 0;top: 0;
+  background-color: rgba(230,230,230,1);
+  width: 100%;
+}
+nav ul{
+  padding-right: 100px;
+  text-align: right;
+}
+nav ul li{
+  display: inline-block;
+
+  padding: 20px;
+}
+nav ul li a{
+  padding: 20px;
+  font-size: 1em;
+  transition: .5s;
+}
+.about{
+  width:100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.floor{
+  width: 30%;height: 50vh;
+  background-color: #fff;
+  border-radius: 100%;
+  box-shadow: 30px 10px 50px 5px #dfdfdf;
+  position: absolute;left: 50%;top: 50%;
+  transform: translate(-50%,-50%);
+  animation: radiusAni 5s forwards;
+  z-index: -1;
+}
+
+@keyframes radiusAni{
+  20%{
+    width: 12%;height: 20vh;
+  }
+
+  50%,100%{
+    left: 0%;
+    width: 90%;height: 140vh;
+  }
+}
+
+.aboutTxt{
+  width: 500px;
+  position: absolute;right: 15%;top: 50%;
+  transform: translate(0,-50%);
+
+  dl{
+    width: 100%;
+    line-height: 25px;
+   position: relative;
+
+
+   &:nth-last-of-type(1){
+ animation:aboutTxtani1 3s forwards;
+   }
+
+
+   &:nth-last-of-type(2){
+    position: absolute;right: 0;top: 0;
+    right: 20%;
+    top: 150%;
+    transform: rotate(15deg);
+    animation:aboutTxtani2 3s forwards;
+    opacity: 0;
+   }
+
+
+   
+   dt{
+    font-size: 2em;
+    color: #ccc;
+  }
+
+  dd{
+    white-space: pre-line;
+    color: #999;
+
+    span:nth-of-type(even){
+      img{
+        margin-left: 10px;
+      }
+    }
+  }
+
+
+  }
+
+
+
+}
+
+
+
+
+@keyframes aboutTxtani1{
+
+  100%{
+    opacity: 0;
+    transform: translate(-40%,-170%) rotate(-25deg);
+  }
+}
+@keyframes aboutTxtani2{
+  100%{
+    opacity: 1;
+    transform: rotate(0);
+    right: 0;top: 0;
+  }
+}
+
+
+
+.port{
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content:space-between;
+  overflow: hidden;
+
+
+
+
+
+  div{
+  ul{
+    display: flex;
+    // transform: rotate(-25deg);
+    width: 100%;
+
+    li{
+      width: 500px;
+      box-shadow: -10px 0px 50px 5px #333;
+      margin: 100px 20px;
+    
+
+      img{
+        @extend %wihe100;
+      }
+    }
+  }
+}
+
+  article{
+    min-width: 450px;
+    background-color: #fff;
+    box-shadow: -10px 0px 50px 0px #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    font-family: 'Noto Sans KR', sans-serif;
+
+
+    h2:first-of-type{
+      font-size: 3em;
+      text-align: center;
+      margin-top: 50%;
+      color: #333;
+      font-weight: 400;
+      margin-bottom: 20px;
+      
+    }
+    h2:last-of-type{
+      font-size: 1.5em;
+      font-weight: 300;
+      
+    }
+
+    p{
+      line-height: 30px;
+      white-space: pre-line;
+     
+
+      span{
+        font-size: 14px;
+        
+      }
+      
+      i{
+        
+        position: relative;
+        &:after{
+          content: '';
+          position: absolute;left: 0;bottom: 0;
+          width: 100%;height: 10px;
+          background-color: rgba(95,175,255,0.5);
+          border-radius: 45px;
+        }
+      }
+
+    }
+
+    button{
+      margin-top: 10px;
+      background-color: #000;
+      color: #fff;
+      width: 100%;
+      height: 40px;
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+

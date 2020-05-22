@@ -1,0 +1,20 @@
+html,body{
+    margin:0px;
+}
+ul,li{
+    list-style-type: none;
+}
+a{
+    color:#95979d;
+    text-decoration: none;
+}
+span,em,strong,a{display: inline-block;}
+*{
+    margin:0;padding:0;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size:16px;
+    color:#95979d;
+    box-sizing:border-box;
+}
+
+
