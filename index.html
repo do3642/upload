@@ -7,10 +7,13 @@
   <title>Document</title>
   <link rel="stylesheet" href="css/main.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+  <script src="js/common.js"></script>
 </head>
 
 <body>
-  <div id="wrap">
+  <div class="intro">
 
     <svg id="Logo-Defs" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -57,21 +60,26 @@
     <!-- 시작 -->
 
     <button class="btn">포트폴리오</button>
-
+    <div class="allCanvas">
+      <canvas></canvas>
+      <canvas></canvas>
+    </div>
 
   </div>
   <div class="container">
     <nav>
       <ul>
-        <li><a href="#wrap">Home</a></li>
-        <li><a href="#wrap">About</a></li>
-        <li><a href="#wrap">Portfolio</a></li>
-        <li><a href="#wrap">Ability</a> </li>
-        <li><a href="#wrap">contact us</a> </li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Ability</a> </li>
+        <li><a href="#">contact us</a> </li>
       </ul>
     </nav>
     <div class="about">
-      <div class="floor"></div>
+      <div class="floor wave">
+      
+      </div>
 
       <div class="aboutTxt">
         <dl>
@@ -80,6 +88,7 @@
             프론트엔드로써 팀에 도움이 되는 존재가 되고싶습니다.
             또한 클라이언트의 어떤 요구사항도 구현가능한
             프론트엔드가 되는 것이 저의 목표입니다.
+
             한번도 생각해보지 못했던 웹 분야로 도전하게 된 계기는 매우 사소했습니다.
             컴퓨터 전공을 통해 다양한 IT분야를 접해봤지만 배울수록
             무엇을 위해 배우는? 그런 의구심만 생기고 의욕적이지 않은 저에게
@@ -107,6 +116,7 @@
     </div>
 
     <section class="port">
+      <span>클릭하거나 스크롤을 내리세요</span>
       <article>
         <h2>Portfolio</h2>
         <h2>PlayStation</h2>
@@ -216,6 +226,7 @@
           </figure>
         </li>
       </ul>
+     
     </div>
 
     <div class="sidecircle"></div>

@@ -17,7 +17,7 @@ body {
  
   // overflow: hidden;
 }
-#wrap{
+.intro{
   overflow: hidden;
   background-color: #000;
   width: 100%;
@@ -199,7 +199,7 @@ body {
   border: none;
 }
 picture{
-  max-width: 150px;height: 130px;
+  max-width: 130px;height: 150px;
   position: absolute;left: 50%;top: 45%;
   transform: translate(-50%,-50%);
 }
@@ -209,14 +209,43 @@ picture img{
 }
 
 
+.allCanvas{
+  background-color: #f00;
+  position: absolute;left:50%;bottom:0;
+  transform: translate(-50%,0);
+  display: flex;
+    canvas{
+      background-color: #fff;
+      width: 0;
+      transition:1s;
+    }
+    canvas.active{
+      width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .container{
   position: relative;
 }
 nav{
+  display: none;
   overflow: hidden;
-  position: absolute;right: 0;top: 0;
-  background-color: rgba(230,230,230,1);
+  position: fixed;right: 0;top: 0;
+  background-color: rgba(230,230,230,.5);
   width: 100%;
+  z-index: 100;
 }
 nav ul{
   padding-right: 100px;
@@ -232,6 +261,11 @@ nav ul li a{
   font-size: 1em;
   transition: .5s;
 }
+
+
+
+
+
 .about{
   width:100%;
   height: 100vh;
@@ -240,14 +274,38 @@ nav ul li a{
 }
 .floor{
   width: 30%;height: 50vh;
-  background-color: #fff;
+  background-color:rgba(86, 161, 117, 0.2);
   border-radius: 100%;
-  box-shadow: 30px 10px 50px 5px #dfdfdf;
+  box-shadow: 30px 10px 50px 1px #efefef;
   position: absolute;left: 50%;top: 50%;
   transform: translate(-50%,-50%);
   // animation: radiusAni 5s forwards;
-  z-index: -1;
+  
+
+  &.active{
+    animation: radiusAni 5s forwards;
+  }
+  &:after{
+    content: '';
+    position: absolute;left: 0;top: 0;
+    background-color:rgba(153,204,255,0.2);
+    @extend %wihe100;
+    border-radius: 200%;
+    transform-origin: 50% 48%;
+    animation: drift 10s 2s infinite linear;
+  }
+  &:before{
+    content: '';
+    position: absolute;left: 0;top: 0;
+    background-color: rgba(55,35,204,0.1);
+    @extend %wihe100;
+    border-radius: 100%;
+    animation: drift 10s infinite linear;
+
+  }
+ 
 }
+
 
 .aboutTxt{
   width: 500px;
@@ -255,23 +313,46 @@ nav ul li a{
   transform: translate(0,-50%);
 
   dl{
+   
     width: 100%;
     line-height: 25px;
    position: relative;
-
+  
 
    &:nth-of-type(1){
- animation:aboutTxtani1 3s forwards;
+    display: none;
+    &.active{
+      // animation:aboutTxtani1 3s forwards;
+      opacity: 0;
+      transform: translate(-40%,-170%) rotate(-25deg);
+    }
+    &.active2{
+      // animation:aboutTxtani11 3s forwards;
+      opacity: 1;
+      transform: translate(0,0) rotate(0);
+    }
    }
 
 
    &:nth-of-type(2){
-    position: absolute;right: 0;top: 0;
+    position: absolute;
     right: 20%;
     top: 150%;
     transform: rotate(15deg);
-    animation:aboutTxtani2 3s forwards;
     opacity: 0;
+
+    &.active{
+      // animation:aboutTxtani2 3s forwards;
+      opacity: 1;
+      transform: rotate(0);
+      right: 0;top: 0;
+    }
+    &.active2{
+      // animation:aboutTxtani22 3s forwards;
+      opacity: 0;
+      transform: rotate(15deg);
+      right: 20%;top: 150%;
+    }
    }
 
 
@@ -284,6 +365,7 @@ nav ul li a{
   dd{
     white-space: pre-line;
     color: #999;
+    
 
     span:nth-of-type(even){
       img{
@@ -304,14 +386,32 @@ nav ul li a{
 
 
 .port{
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   display: flex;
   flex-direction: row-reverse;
   justify-content:space-between;
   overflow: hidden;
-
-
-
+  transition: 1.5s;
+  position: relative;
+  &.active{
+    transform: translateY(-7%);
+  }
+ >span{
+   display: inline-block;
+   @extend %wihe100;
+   position: absolute;left: 0;top: 0;
+   background-color: rgba(0,0,0,0.5);
+   z-index: 10;
+   text-align: center;
+   font-size: 1.5em;
+   color: #fff;
+   padding-top: 10px;
+   cursor: pointer;
+   &.active{
+     display: none;
+   }
+ }
 
   >div{
     overflow: hidden;
@@ -340,7 +440,12 @@ nav ul li a{
     }
 
     &:nth-of-type(2){
-      animation: portani 3s forwards;
+      // animation: portani 3s forwards;
+      transition: 1.5s;
+      transform: rotate(-25deg) translate(-200%,-65%);
+      &.active{
+        transform: rotate(-25deg) translate(0%,-60%);
+      }
      li{
        perspective: 900px;
       transition: .5s;
@@ -549,6 +654,10 @@ nav ul li a{
 
 
 
+
+
+
+
 .ability{
   position: relative;
   height: 100vh;
@@ -586,25 +695,30 @@ nav ul li a{
     transform-style: preserve-3d;
     perspective: 500px;
     transform: translateY(-200px); 
+    position: relative;
+   
+    
   ul{
+  &.active{
+    opacity: 1;
+  }
   
-    // background-color: rgba(0,0,0,0.2);
+   opacity: 0;
     @extend %flexbasic;
     flex-direction: row-reverse;
+    transition: 1s;
     margin-top: 15%;
-    transform: rotateY(25deg) translateY(200px) translateZ(-100px)translateX(-500px); // x = point
+    transform: rotateY(25deg) translateY(200px) translateZ(-100px)translateX(-1200px); // x = point
     transform-style: preserve-3d;
     position: relative;
-    &:after{
-      content: '';
-      position: absolute;right: 0;top: 0;
-      width: 100%;height: 2%;
-      background-color: rgba(230,230,230,.5);
-    }
+    
     
     li{
       transform: translateX(300px) rotateY(-25deg);
       transform-origin: left;
+      transition: .5s;
+      
+     
       p{
         font-size: 1.5em;
         span{

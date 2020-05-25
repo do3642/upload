@@ -1,0 +1,17 @@
+.wave{
+    width:1000px;
+    height: 500px;
+    background-image:url(http://gahyun.wooga.kr/main/img/testImg/testImg1.jpg);
+    background-size:100%;
+    position:relative;
+  }
+  .wave span{
+    display:none;
+    font-size:50px; 
+    position: absolute; 
+    top:200px; 
+    left: 400px; 
+    transform: translate(-50%,-50%);
+    color:#fff;
+    background:rgba(0,0,0,0.4);
+  }
