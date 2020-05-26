@@ -8,7 +8,10 @@
 %wihe100{
   width: 100%;height: 100%;
 }
-
+button{
+  cursor: pointer;
+  outline: none;
+}
 *{
   // color: #fff;
   font-size: 16px;
@@ -209,19 +212,41 @@ picture img{
 }
 
 
-.allCanvas{
-  background-color: #f00;
-  position: absolute;left:50%;bottom:0;
-  transform: translate(-50%,0);
-  display: flex;
-    canvas{
-      background-color: #fff;
-      width: 0;
-      transition:1s;
+.effectDiv{
+  width: 100%;height: 100%;
+  position: fixed;left:0;top:0;
+  display: none;
+  z-index: 1000;
+    div{
+    
+      transition: 2s;
+      &:nth-of-type(1){
+        width: 50%;
+        height: 100%;
+        background: #fff;
+        position: absolute;left: 0;top: 0;
+        transform-origin: right bottom;
+        transform: scale(0);
+        border-radius: 100% 0 0 0;
+      
+        
+      }
+      &:nth-of-type(2){
+        width: 50%;
+        height: 100%;
+        background: #eee;
+        position: absolute;right: 0;top: 0;
+        transform-origin: left bottom;
+        transform: scale(0);
+        border-radius: 0 100% 0 0;
+      }
+     
+     
     }
-    canvas.active{
-      width: 100%;
+    div.active{
+     transform: scale(2);
     }
+    
 }
 
 
@@ -246,21 +271,72 @@ nav{
   background-color: rgba(230,230,230,.5);
   width: 100%;
   z-index: 100;
-}
-nav ul{
-  padding-right: 100px;
-  text-align: right;
-}
-nav ul li{
-  display: inline-block;
+ 
+  ul{
+    // display: none;
+    padding-right: 100px;
+    text-align: right;
+    li{
+      display: inline-block;
+    
+      padding: 20px;
+      a{
+        padding: 20px;
+        font-size: 1em;
+        transition: .5s;
+      }
+    }
+  }
+  .bugger{
+    display: none;
+    
+    width: 35px;height: 50px;
+    // background: #00f;
+    float: right;
+    margin-right: 5%;
+    line-height: 5px;
+    cursor: pointer;
+    span{
+      width: 100%;
+      height: 5px;
+      background: #333;
+      transition: .5s;
+      &:nth-of-type(1){
+      margin-top: 15px;
+      }
+      
+    
+    }
+    &.active{
+      & span:nth-of-type(1){
+        transform: translateY(10px) rotate(45deg);
+      }
+      & span:nth-of-type(2){
+        opacity: 0;transform: translate(-10px,10px);
+      }
+      & span:nth-of-type(3){
+        transform: translateY(-7px) rotate(-45deg);
+      }
+    }
+    &.Hover:hover{
+      span:nth-of-type(1){
+        transform: translateY(-5px);
+      }
+      & span:nth-of-type(3){
+        transform: translateY(5px);
 
-  padding: 20px;
+      }
+    }
+  }
+
+
+
+
 }
-nav ul li a{
-  padding: 20px;
-  font-size: 1em;
-  transition: .5s;
-}
+
+
+
+
 
 
 
@@ -540,9 +616,10 @@ nav ul li a{
 
     li{
      
-      box-shadow: -10px 0px 15px 5px #aaa;
+      box-shadow: -10px 10px 15px 5px rgba(200,200,200,.8);
       margin: 100px 20px;
       background-color: rgba(51,51,51,.3);
+      font-size: 0;
       position: relative;
       
       
@@ -560,9 +637,10 @@ nav ul li a{
 }
 
   article{
+   
     min-width: 450px;
     background-color: #fff;
-    box-shadow: -10px 0px 50px 0px #eee;
+    box-shadow: -10px 0px 50px 3px #eee;
     display: flex;
     flex-direction: column;
     padding: 3%;
@@ -573,6 +651,7 @@ nav ul li a{
     h2:first-of-type{
       font-size: 3em;
       text-align: center;
+      margin: 0 auto;
       margin-top: 20%;
       color: #333;
       font-weight: 400;
@@ -585,7 +664,8 @@ nav ul li a{
       
     }
 
-    p{
+    >p{
+     
       line-height: 30px;
       white-space: pre-line;
      
@@ -610,44 +690,71 @@ nav ul li a{
     }
 
     >button{
+      margin: 0 auto;
       margin-top: 10px;
       background-color: #000;
       color: #fff;
       width: 100%;
       height: 40px;
     }
-  }
 
-  .portmove{
-    color: #333;
-    position: absolute;left: 0.5%;top: 50%;
-    display: flex;
-    flex-direction: column;
-    transform: translate(0,-50%);
-    z-index: 10;
-
-    button{
-      padding: 10px 0;
-      margin: 10px 0;
-      width: 30px;
-      border:none;
-      text-transform: uppercase;
-     	// writing-mode: tb-rl;
-      // writing-mode: vertical-rl;
-      // text-orientation: upright;
-      white-space: pre-line;
-      font-size: 1em;
-      &:nth-of-type(1){
-        background: #000;
-        color: #fff;
+    .portmove{
+      
+     width: 100%;
+      display: flex;
+      justify-content: space-around;
+      margin: 0 auto;
+      margin-top: 10px;
+  
+      button{
+        background-color: #fff;
+        width: 50px;
+        height: 50px;
+        border:none;
+        
+       
+        &:nth-of-type(1){
+          background-image: url('../img/icon/Larrow.png');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 35px;
+          margin-right: 10px;
+         
+        }
+        &:nth-of-type(2){
+          background-image: url('../img/icon/Rarrow.png');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: 35px;
+          margin-left: 10px;
+        }
       }
-      &:nth-of-type(2){
-        background: #fff;
-        color: #333;
-        box-shadow: 0 0 2px 2px #ccc;
+      span{
+        width: 150px;
+        height: 50px;
+        margin: 0 5px;
+        border: 1px solid #333;
+        img{
+          @extend %wihe100;
+        }
       }
     }
+
+    div:last-of-type{
+      margin-top: 10px;
+      p{
+        text-align: center;
+        i{
+          padding-right: 5px;
+          font-style: normal;
+        }
+      }
+    }
+
+
   }
+
+  
 
 }
 
@@ -697,7 +804,7 @@ nav ul li a{
     transform: translateY(-200px); 
     position: relative;
    
-    
+   
   ul{
   &.active{
     opacity: 1;
@@ -720,13 +827,10 @@ nav ul li a{
       
      
       p{
-        font-size: 1.5em;
-        span{
-          width: 20px;height: 20px;
-          background: #eee;
-          border-radius: 50%;
-          margin-right: 5px;
-        }
+        font-size: 2em;
+      padding-left: 7%;
+      
+      
        
       }
       figure{
@@ -773,15 +877,50 @@ nav ul li a{
   }
   .tri{
     width: 100%;height: 100px;
-    background-color: #333;
-    // background:
-    //         linear-gradient(15deg, #f0f,transparent),
-    //         linear-gradient(-15deg, #aff, transparent ),
-    //         linear-gradient(180deg, #333, #333) bottom / 50px;
-    
+    overflow: hidden;
+  
     position: absolute;left: 0;bottom: 0;
-    z-index:-10;
+    z-index:1;
+
+    span{
+      &:nth-of-type(1){
+        position: absolute;left:0;top: 0;
+      }
+      &:nth-of-type(2){
+        position: absolute;right:0;top: 0;
+
+      }
+
+    }
+    p{
+      position: absolute;bottom: 0;
+      @extend %wihe100;
     
+      background: #000;
+      transition: 2s;
+      z-index: -1;
+      &:nth-of-type(1){
+        width: 60%;
+        left: 0;
+        background-color: #000;
+      &.active{
+        transform: rotate(10deg);
+      }
+        
+      }
+      &:nth-of-type(2){
+        right: 0;
+        width: 60%;
+        background-color: #000;
+        &.active{
+          transform: rotate(-10deg);
+        }
+      }
+
+      &.active{
+        height: 0;
+      }
+    }
   }
 }
 

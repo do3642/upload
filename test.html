@@ -6,28 +6,12 @@
   <title>Document</title>
   <link rel="stylesheet" href="css/test.css">
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <script src="https://www.jqueryscript.net/demo/jQuery-Plugin-For-Water-Ripple-Animation-ripples/js/jquery.ripples.js"></script>
+ 
 </head>
 <body>
-  <div class="wave"  style="background-image:url(http://placekitten.com/800/500)">
-    <span>Cat</span>
-    <script>
-        $('.wave').ripples({
-            resolution: 256,
-            perturbance: 0.04
-        });
-
-$(".wave span").on('mousedown',function(e){
-  e.offsetX=400;
-  e.offsetY=200;
-});
-
-setTimeout(function(){
-  $(".wave span").fadeIn(500);
-  $(".wave span").trigger('mousedown');
-},600);
-
-    </script>
+  <div class="wrap">
+  <div class="div1"></div>
+  <div class="div2"></div>
   </div>
 </body>
 </html>

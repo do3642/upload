@@ -1,0 +1,29 @@
+@media (max-width: 860px) {
+  nav {
+    overflow: initial;
+    background: transparent; }
+
+  nav ul {
+    display: none;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    padding-top: 10%;
+    background: #fff;
+    text-align: center;
+    z-index: -1; }
+    nav ul li {
+      padding: 2% 0; }
+
+  nav .bugger {
+    display: block; } }
+@media (max-width: 700px) {
+  picture {
+    max-width: 50px;
+    height: 50px; } }
+
+/*# sourceMappingURL=media.css.map */

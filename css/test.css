@@ -1,17 +1,36 @@
-.wave{
-    width:1000px;
-    height: 500px;
-    background-image:url(http://gahyun.wooga.kr/main/img/testImg/testImg1.jpg);
-    background-size:100%;
-    position:relative;
+*{
+  margin: 0;
+}
+.wrap{
+  width: 100%;
+  height: 100vh;
+  background: rgba(255,0,0,0.2);
+  position: relative;
+}
+
+.div1{
+  width: 50%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  position: absolute;left: 0;top: 0;
+  transform-origin: right bottom;
+  transform: scale(0);
+  border-radius: 100% 0 0 0;
+  animation: ani1 5s infinite;
+}
+@keyframes ani1{
+  100%{
+    transform: scale(2);
+ 
   }
-  .wave span{
-    display:none;
-    font-size:50px; 
-    position: absolute; 
-    top:200px; 
-    left: 400px; 
-    transform: translate(-50%,-50%);
-    color:#fff;
-    background:rgba(0,0,0,0.4);
-  }
+}
+.div2{
+  width: 50%;
+  height: 100%;
+  background: rgba(255,255,255,.5);
+  position: absolute;right: 0;top: 0;
+  transform-origin: left bottom;
+  transform: scale(0);
+  border-radius: 0 100% 0 0;
+  animation: ani1 5s infinite;
+}

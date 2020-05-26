@@ -1,5 +1,18 @@
 window.addEventListener('DOMContentLoaded',function(){
   
+
+    function bugger(){
+        $('.bugger').on('click',function(){
+            $(this).toggleClass('active')
+            $(this).toggleClass('Hover')
+            if($('.bugger').hasClass('active')){
+                $('nav ul').slideDown();
+            }else{
+                $('nav ul').slideUp();
+            }
+        });
+    }
+    bugger();
     var intro = document.querySelector('.intro');
 
     // 인트로 스크롤 락
@@ -28,11 +41,20 @@ window.addEventListener('DOMContentLoaded',function(){
     function introbtn(i){
         $('.btn').on('click',function(){
 
-        
-            $('.allCanvas canvas').addClass('active');
+            $('.effectDiv').show(0);
+            $('.effectDiv div').addClass('active');
            setTimeout(function(){
          movescroll('.container',0);
-           },1000);
+         $('.effectDiv div').eq(0).css({
+             left:'-100%'
+         });
+         $('.effectDiv div').eq(1).css({
+            right:'-100%'
+        });
+        setTimeout(function(){
+            $('.effectDiv').hide();
+        },1500);
+           },2000);
           
         });
     };
@@ -73,7 +95,23 @@ window.addEventListener('DOMContentLoaded',function(){
 
 
 
-
+    function navscroll(){
+        $(window).on('scroll',function(){
+            var sTop = $(this).scrollTop();
+            var conTop = $('.container').offset().top;
+            console.log(conTop);
+            if(sTop < conTop){
+                $('nav').css({
+                    position:'absolute'
+                })
+            }else{
+                $('nav').css({
+                    position:'fixed'
+                })
+            }
+        });
+    }
+    navscroll();
 
 
 
@@ -83,7 +121,7 @@ window.addEventListener('DOMContentLoaded',function(){
 
         $('.floor').on('mouseenter',function(){
             $(this).addClass('active');
-            
+           
             setTimeout(function(){
                 $('.aboutTxt dl').slideDown(1500);
                 setTimeout(function(){
@@ -96,7 +134,7 @@ window.addEventListener('DOMContentLoaded',function(){
                         var delta = e.originalEvent.wheelDelta;
                         e.preventDefault();
                         e.stopPropagation();
-
+                        
                         if(floorBln) {
                             floorBln = !floorBln
                             
@@ -110,6 +148,7 @@ window.addEventListener('DOMContentLoaded',function(){
                                 $('.aboutTxt dl').removeClass('active2');
 
                             }else{
+                               
                                 $('.aboutTxt dl').removeClass('active');
                                 $('.aboutTxt dl').addClass('active2');
                     
@@ -120,6 +159,8 @@ window.addEventListener('DOMContentLoaded',function(){
                             }else{
                                 $('.port').removeClass('active');
                             }
+                         
+
 
                             setTimeout(function(){
                                 floorBln = !floorBln;
@@ -225,11 +266,10 @@ window.addEventListener('DOMContentLoaded',function(){
                     if(idx == $(".trans li").length) {
                         movescroll('.contact',500);
                         idx = $(".trans li").length-1;
+                        $('.tri p').addClass('active');
                     }
                    
-                    $('.trans ul').after().css({
-                        width:'100%'
-                    });
+                   
                 }else{ //휠 올렸을 때
                     idx--;
                     movescroll('.ability',500);
@@ -237,6 +277,7 @@ window.addEventListener('DOMContentLoaded',function(){
                         movescroll('.port',500);
                         idx = 0;
                     }
+                    $('.tri p').removeClass('active');
                 }//엘스문
             
 
@@ -262,6 +303,20 @@ window.addEventListener('DOMContentLoaded',function(){
 
     }
     ability3D();
+
+    function contact(){
+
+        $('.contact').on('wheel',function(e){
+            var delta = e.originalEvent.wheelDelta;
+            if(delta <0){ //휠 내렸을 때
+              
+                $('.tri p').addClass('active');
+            }else{ //휠 올렸을 때
+                $('.tri p').removeClass('active');
+            }//엘스문
+        });
+    }
+    contact();
     
 
 
