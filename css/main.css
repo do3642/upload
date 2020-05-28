@@ -1,4 +1,19 @@
 @import url("import.css");
+body::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+  border-radius: 50%; }
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+  box-shadow: inset 0px 0px 5px white; }
+body::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: .5px solid transparent; }
+body::-webkit-scrollbar-button {
+  display: none; }
+
 .btn, .port > div ul:nth-of-type(2) li span:after, .ability .trans ul, .ability .trans ul li figure {
   display: flex;
   justify-content: center;
@@ -177,7 +192,7 @@ button {
   color: #333;
   border: none; }
 
-picture {
+h1 {
   max-width: 130px;
   height: 150px;
   position: absolute;
@@ -185,7 +200,7 @@ picture {
   top: 45%;
   transform: translate(-50%, -50%); }
 
-picture img {
+h1 img {
   width: 100%;
   height: 100%; }
 
@@ -224,6 +239,12 @@ picture img {
 
 .container {
   position: relative; }
+  .container h2 {
+    display: none;
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-top: 10%; }
 
 nav {
   display: none;
@@ -234,16 +255,25 @@ nav {
   background-color: rgba(230, 230, 230, 0.5);
   width: 100%;
   z-index: 100; }
-  nav ul {
-    padding-right: 100px;
-    text-align: right; }
-    nav ul li {
-      display: inline-block;
-      padding: 20px; }
-      nav ul li a {
-        padding: 20px;
-        font-size: 1em;
-        transition: .5s; }
+  nav div {
+    position: relative; }
+    nav div ul {
+      padding-right: 100px;
+      text-align: right; }
+      nav div ul li {
+        display: inline-block;
+        padding: 20px; }
+        nav div ul li a {
+          padding: 20px;
+          font-size: 1em;
+          transition: .5s; }
+        nav div ul li:hover a {
+          font-size: 1.1em;
+          font-weight: bold;
+          color: #333;
+          letter-spacing: 5px; }
+        nav div ul li.active a {
+          color: #99ccff; }
   nav .bugger {
     display: none;
     width: 35px;
@@ -265,7 +295,7 @@ nav {
       opacity: 0;
       transform: translate(-10px, 10px); }
     nav .bugger.active span:nth-of-type(3) {
-      transform: translateY(-7px) rotate(-45deg); }
+      transform: translateY(-8px) rotate(-45deg); }
     nav .bugger.Hover:hover span:nth-of-type(1) {
       transform: translateY(-5px); }
     nav .bugger.Hover:hover span:nth-of-type(3) {
@@ -314,17 +344,16 @@ nav {
   top: 50%;
   transform: translate(0, -50%); }
   .aboutTxt dl {
+    display: none;
     width: 100%;
     line-height: 25px;
     position: relative; }
-    .aboutTxt dl:nth-of-type(1) {
-      display: none; }
-      .aboutTxt dl:nth-of-type(1).active {
-        opacity: 0;
-        transform: translate(-40%, -170%) rotate(-25deg); }
-      .aboutTxt dl:nth-of-type(1).active2 {
-        opacity: 1;
-        transform: translate(0, 0) rotate(0); }
+    .aboutTxt dl:nth-of-type(1).active {
+      opacity: 0;
+      transform: translate(-40%, -170%) rotate(-25deg); }
+    .aboutTxt dl:nth-of-type(1).active2 {
+      opacity: 1;
+      transform: translate(0, 0) rotate(0); }
     .aboutTxt dl:nth-of-type(2) {
       position: absolute;
       right: 20%;
@@ -343,10 +372,15 @@ nav {
         top: 150%; }
     .aboutTxt dl dt {
       font-size: 2em;
-      color: #ccc; }
+      color: #ccc;
+      transition: .5s; }
     .aboutTxt dl dd {
       white-space: pre-line;
-      color: #999; }
+      color: #999;
+      font-size: 1em; }
+      .aboutTxt dl dd span img {
+        width: 16px;
+        height: 16px; }
       .aboutTxt dl dd span:nth-of-type(even) img {
         margin-left: 10px; }
 
@@ -387,10 +421,12 @@ nav {
         animation: portbounce 1s infinite alternate; }
       .port > div ul:nth-of-type(1) li:nth-of-type(even) {
         animation: portbounce 1s 1s infinite alternate; }
-      .port > div ul:nth-of-type(3) li:nth-of-type(even) {
-        animation: portbounce 1s infinite alternate; }
-      .port > div ul:nth-of-type(3) li:nth-of-type(odd) {
-        animation: portbounce 1s 1s infinite alternate; }
+      .port > div ul:nth-of-type(3) {
+        transform: rotate(-25deg) translate(35%, -60%); }
+        .port > div ul:nth-of-type(3) li:nth-of-type(even) {
+          animation: portbounce 1s infinite alternate; }
+        .port > div ul:nth-of-type(3) li:nth-of-type(odd) {
+          animation: portbounce 1s 1s infinite alternate; }
       .port > div ul:nth-of-type(2) {
         transition: 1.5s;
         transform: rotate(-25deg) translate(-200%, -65%); }
@@ -412,16 +448,10 @@ nav {
             opacity: 1; }
           .port > div ul:nth-of-type(2) li:hover {
             box-shadow: -10px 0px 15px 5px #bbb; }
-          .port > div ul:nth-of-type(2) li:nth-of-type(1) span:after {
-            content: 'Delmonte \AHTML/CSS/JS/Jquery'; }
-          .port > div ul:nth-of-type(2) li:nth-of-type(2) span:after {
-            content: 'Playstation \AHTML/CSS/JS/Jquery'; }
-          .port > div ul:nth-of-type(2) li:nth-of-type(3) span:after {
-            content: 'Sinill \AHTML/CSS/JS/Jquery'; }
           .port > div ul:nth-of-type(2) li span {
             min-width: 700px; }
             .port > div ul:nth-of-type(2) li span:after {
-              content: '';
+              content: 'Playstation \AHTML/CSS/JS/Jquery';
               white-space: pre-line;
               color: #fff;
               position: absolute;
@@ -457,8 +487,6 @@ nav {
               .port > div ul:nth-of-type(2) li span button:hover {
                 color: #333;
                 background-color: #fff; }
-      .port > div ul:nth-of-type(3) {
-        transform: rotate(-25deg) translate(35%, -60%); }
       .port > div ul li {
         box-shadow: -10px 10px 15px 5px rgba(200, 200, 200, 0.8);
         margin: 100px 20px;
@@ -478,7 +506,7 @@ nav {
     padding: 3%;
     font-family: 'Noto Sans KR', sans-serif;
     position: relative; }
-    .port article h2:first-of-type {
+    .port article h3:first-of-type {
       font-size: 3em;
       text-align: center;
       margin: 0 auto;
@@ -486,7 +514,7 @@ nav {
       color: #333;
       font-weight: 400;
       margin-bottom: 20px; }
-    .port article h2:last-of-type {
+    .port article h3:last-of-type {
       font-size: 1.5em;
       font-weight: 300; }
     .port article > p {
@@ -516,6 +544,7 @@ nav {
       width: 100%;
       display: flex;
       justify-content: space-around;
+      align-items: center;
       margin: 0 auto;
       margin-top: 10px; }
       .port article .portmove button {
@@ -552,7 +581,7 @@ nav {
   position: relative;
   height: 100vh;
   overflow: hidden; }
-  .ability h3 {
+  .ability h4 {
     display: inline-block;
     position: relative;
     left: 50%;
@@ -561,7 +590,7 @@ nav {
     font-size: 2em;
     color: #333;
     margin-top: 100px; }
-    .ability h3:after {
+    .ability h4:after {
       content: '';
       width: 50%;
       height: 2px;
@@ -662,7 +691,7 @@ nav {
   background-color: #000;
   padding-bottom: 50px;
   padding-top: 100px; }
-  .contact h4 {
+  .contact h5 {
     margin-bottom: 50px;
     font-size: 2.5em;
     color: #fff;
@@ -670,7 +699,7 @@ nav {
     display: inline-block;
     left: 50%;
     transform: translateX(-50%); }
-    .contact h4:after {
+    .contact h5:after {
       content: '';
       display: block;
       margin: 0 auto;
