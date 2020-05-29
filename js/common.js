@@ -46,12 +46,18 @@ window.addEventListener('DOMContentLoaded',function(){
     
     //클릭시 스크롤시 해당 offset으로 이동 함수
     function movescroll(ele,time){
-        
+       
         var move = $(ele).offset().top;
         $('html').stop().animate({
             scrollTop:move
         },time);
-    
+        if($('.port').hasClass('active')){
+            $('html').stop().animate({
+                scrollTop:move+50
+            },time);
+          
+        };
+        console.log('aa')
     }
  
 
@@ -134,7 +140,7 @@ window.addEventListener('DOMContentLoaded',function(){
             if(sTop >con-500){
                 $('nav li').removeClass('active');
                 $('nav li').eq(i).addClass('active');
-                console.log(i);
+             
             }else{
               
             }
