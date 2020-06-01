@@ -350,7 +350,8 @@ nav{
         transform: translateY(10px) rotate(45deg);
       }
       & span:nth-of-type(2){
-        opacity: 0;transform: translate(-10px,10px);
+        opacity: 0;height: 0;
+       
       }
       & span:nth-of-type(3){
         transform: translateY(-8px) rotate(-45deg);
@@ -358,10 +359,13 @@ nav{
     }
     &.Hover:hover{
       span:nth-of-type(1){
-        transform: translateY(-5px);
+        transform: translateY(-7px);
       }
-      & span:nth-of-type(3){
-        transform: translateY(5px);
+      span:nth-of-type(2){
+     
+      }
+      span:nth-of-type(3){
+        transform: translateY(7px);
 
       }
     }
@@ -584,7 +588,7 @@ nav{
         opacity: 1;
         
       }
-        &:hover span button{
+        &:hover span a{
           bottom: 15%;
           opacity: 1;
           
@@ -635,17 +639,19 @@ nav{
          
          
         }
-        button{
+        a{
+         @extend %flexbasic;
           position: absolute;left: 50%;bottom: 0%;
           transform: translate(-50%,0);
           border: 1px solid #fff;
           width: 30%;
-          height: 40px;
-          //  height: 0;
+           height: 45px;
           background-color: #000;
           color: #fff;
           opacity: 0;
           transition: .5s;
+          text-align:center;
+          
           &:hover{
             color: #333;
             background-color: #fff;
@@ -738,7 +744,8 @@ nav{
 
     }
 
-    >button{
+    >a{
+      @extend %flexbasic;
       margin: 0 auto;
       margin-top: 10px;
       background-color: #000;

@@ -14,7 +14,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-button {
   display: none; }
 
-.btn, .port > div ul:nth-of-type(2) li span:after, .ability .trans ul, .ability .trans ul li figure {
+.btn, .port > div ul:nth-of-type(2) li span:after, .port > div ul:nth-of-type(2) li span a, .port article > a, .ability .trans ul, .ability .trans ul li figure {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -293,13 +293,13 @@ nav {
       transform: translateY(10px) rotate(45deg); }
     nav .bugger.active span:nth-of-type(2) {
       opacity: 0;
-      transform: translate(-10px, 10px); }
+      height: 0; }
     nav .bugger.active span:nth-of-type(3) {
       transform: translateY(-8px) rotate(-45deg); }
     nav .bugger.Hover:hover span:nth-of-type(1) {
-      transform: translateY(-5px); }
+      transform: translateY(-7px); }
     nav .bugger.Hover:hover span:nth-of-type(3) {
-      transform: translateY(5px); }
+      transform: translateY(7px); }
 
 .about {
   width: 100%;
@@ -443,7 +443,7 @@ nav {
           .port > div ul:nth-of-type(2) li:hover span:before {
             height: 50%;
             opacity: 1; }
-          .port > div ul:nth-of-type(2) li:hover span button {
+          .port > div ul:nth-of-type(2) li:hover span a {
             bottom: 15%;
             opacity: 1; }
           .port > div ul:nth-of-type(2) li:hover {
@@ -472,19 +472,20 @@ nav {
               background-color: rgba(0, 0, 0, 0.5);
               opacity: 0;
               transition: .5s; }
-            .port > div ul:nth-of-type(2) li span button {
+            .port > div ul:nth-of-type(2) li span a {
               position: absolute;
               left: 50%;
               bottom: 0%;
               transform: translate(-50%, 0);
               border: 1px solid #fff;
               width: 30%;
-              height: 40px;
+              height: 45px;
               background-color: #000;
               color: #fff;
               opacity: 0;
-              transition: .5s; }
-              .port > div ul:nth-of-type(2) li span button:hover {
+              transition: .5s;
+              text-align: center; }
+              .port > div ul:nth-of-type(2) li span a:hover {
                 color: #333;
                 background-color: #fff; }
       .port > div ul li {
@@ -533,7 +534,7 @@ nav {
           height: 10px;
           background-color: rgba(95, 175, 255, 0.5);
           border-radius: 45px; }
-    .port article > button {
+    .port article > a {
       margin: 0 auto;
       margin-top: 10px;
       background-color: #000;

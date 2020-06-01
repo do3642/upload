@@ -48,16 +48,14 @@ window.addEventListener('DOMContentLoaded',function(){
     function movescroll(ele,time){
        
         var move = $(ele).offset().top;
+        if(ele == '.port'){
+                move +=80
+        }
+ 
         $('html').stop().animate({
             scrollTop:move
         },time);
-        if($('.port').hasClass('active')){
-            $('html').stop().animate({
-                scrollTop:move+50
-            },time);
-          
-        };
-        console.log('aa')
+    
     }
  
 
@@ -504,10 +502,7 @@ else{
     $('.bugger').addClass('Hover');
     $('nav div').eq(0).slideDown(0); //네비 데스크탑일때
 
-    $('.port >div').animate({ // 포트에 서브스크롤이 내려왔을때 데스크탑 환경에서 깨지는걸 방지
-        scrollTop:0
-    },0);
-
+    
 
 
   //이상
@@ -518,6 +513,11 @@ m1200.addListener(function(e){
         $('body').removeClass('controlPort');
     }else{
         $('body').addClass('controlPort');
+        $('.port >div').animate({ // 포트에 서브스크롤이 내려왔을때 데스크탑 환경에서 깨지는걸 방지
+            scrollTop:0
+        },0);
+      
+    
     }
 });
 

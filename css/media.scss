@@ -76,6 +76,7 @@
     nav{
         overflow: initial;
         background: transparent;
+        display: block;
         div{
             width: 100%;
             display: none;
@@ -214,6 +215,7 @@
                       font-size: 1.5em;
                       margin-top: 20px;
                      color: #333;
+                     cursor: pointer;
                      &:hover{
                          letter-spacing: 10px;
                      }
@@ -316,7 +318,7 @@
         transition: 1.5s;
         position: relative;
         &.active{
-          transform: translateY(-7%);
+          transform: translateY(-20px);
         }
         article{
             min-width: 320px;

@@ -39,7 +39,8 @@
 @media (max-width: 860px) {
   nav {
     overflow: initial;
-    background: transparent; }
+    background: transparent;
+    display: block; }
     nav div {
       width: 100%;
       display: none;
@@ -139,7 +140,8 @@
       .aboutTxt dl dt {
         font-size: 1.5em;
         margin-top: 20px;
-        color: #333; }
+        color: #333;
+        cursor: pointer; }
         .aboutTxt dl dt:hover {
           letter-spacing: 10px; }
       .aboutTxt dl dd {
@@ -203,7 +205,7 @@
     transition: 1.5s;
     position: relative; }
     .port.active {
-      transform: translateY(-7%); }
+      transform: translateY(-20px); }
     .port article {
       min-width: 320px; }
       .port article .portmove span {
