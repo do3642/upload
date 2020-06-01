@@ -14,7 +14,7 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-button {
   display: none; }
 
-.btn, .port > div ul:nth-of-type(2) li span:after, .port > div ul:nth-of-type(2) li span a, .port article > a, .ability .trans ul, .ability .trans ul li figure {
+.btn, .port > div ul:nth-of-type(2) li span:after, .port > div ul:nth-of-type(2) li span a, .port article div > a, .ability .trans ul, .ability .trans ul li figure {
   display: flex;
   justify-content: center;
   align-items: center; }
@@ -44,8 +44,6 @@ button {
   left: -25%;
   margin: auto;
   display: block;
-  fill: #333;
-  fill: url("#MyGradient");
   stroke: #999;
   stroke-miterlimit: 5; }
 
@@ -217,7 +215,7 @@ h1 img {
     .effectDiv div:nth-of-type(1) {
       width: 50%;
       height: 100%;
-      background: #fff;
+      background: #fafafa;
       position: absolute;
       left: 0;
       top: 0;
@@ -227,7 +225,7 @@ h1 img {
     .effectDiv div:nth-of-type(2) {
       width: 50%;
       height: 100%;
-      background: #eee;
+      background: #fefefe;
       position: absolute;
       right: 0;
       top: 0;
@@ -249,7 +247,7 @@ h1 img {
 nav {
   display: none;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 0;
   background-color: rgba(230, 230, 230, 0.5);
@@ -507,7 +505,7 @@ nav {
     padding: 3%;
     font-family: 'Noto Sans KR', sans-serif;
     position: relative; }
-    .port article h3:first-of-type {
+    .port article > h3 {
       font-size: 3em;
       text-align: center;
       margin: 0 auto;
@@ -515,17 +513,17 @@ nav {
       color: #333;
       font-weight: 400;
       margin-bottom: 20px; }
-    .port article h3:last-of-type {
+    .port article div h3 {
       font-size: 1.5em;
       font-weight: 300; }
-    .port article > p {
+    .port article div > p {
       line-height: 30px;
       white-space: pre-line; }
-      .port article > p span {
+      .port article div > p span {
         font-size: 14px; }
-      .port article > p i {
+      .port article div > p i {
         position: relative; }
-        .port article > p i:after {
+        .port article div > p i:after {
           content: '';
           position: absolute;
           left: 0;
@@ -534,7 +532,7 @@ nav {
           height: 10px;
           background-color: rgba(95, 175, 255, 0.5);
           border-radius: 45px; }
-    .port article > a {
+    .port article div > a {
       margin: 0 auto;
       margin-top: 10px;
       background-color: #000;

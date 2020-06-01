@@ -16,8 +16,10 @@
 <body>
   <div class="intro scrollEvent">
 
-    <svg id="Logo-Defs" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg id="Logo-Defs" xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+      <!-- version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" svg 옵션값 -->
       <defs>
         <linearGradient id="MyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="5%" stop-color="#f3f3f3" />
@@ -45,7 +47,7 @@
     <h1><img src="img/fewhite.png" alt="Logo"></h1>
 
 
-    <svg id="Logo" class="Animate-Path" width="100%" height="100%" viewBox="0 0 612 792" xml:space="preserve">
+    <svg id="Logo" class="Animate-Path" width="100%" height="100%" viewBox="0 0 612 792" xml:space="preserve" fill="url(#MyGradient)">
       <use id="Draw-Mark" class="Animate-Draw" xlink:href="#Mark" />
       <use id="Draw-Frame" class="Animate-Draw" xlink:href="#Frame" />
       <use id="Draw-Text" class="Animate-Draw" xlink:href="#Logo-Text" />
@@ -125,11 +127,12 @@
 
     </div>
 
-    <section class="port scrollEvent">
+    <div class="port scrollEvent">
       <span>클릭하거나 스크롤을 내리세요</span>
       <article>
         <h3>Portfolio</h3>
-        <h3>PlayStation</h3>
+        <div class="json"></div>
+        <!-- <h3>PlayStation</h3>
         <p><span>
             제작기간: 20/03/16 ~ 20/04/10
             참여율: 100%
@@ -156,12 +159,12 @@
             주색: #<i>5fafff</i>
           </span>
         </p>
-        <a href="https://do3642.github.io/playstation/">바로가기</a>
+        <a href="https://do3642.github.io/playstation/" target="_blank">바로가기</a> -->
         <div class="portmove">
           <button></button>
-          <span><img src="img/port/delmonte.PNG" alt=""></span>
-          <span><img src="img/port/psmain.PNG" alt=""></span>
-          <span><img src="img/port/sin.PNG" alt=""></span>
+          <span><img src="img/port/delmonte.PNG" alt="델몬트메인"></span>
+          <span><img src="img/port/psmain.PNG" alt="플스메인"></span>
+          <span><img src="img/port/sin.PNG" alt="신일메인"></span>
           <button></button>
         </div>
         <div>
@@ -187,7 +190,7 @@
       </div>
 
       
-    </section>
+    </div>
     <section class="ability scrollEvent">
       <h4>ABILITY</h4>
       <div class="floor"></div>

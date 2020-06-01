@@ -531,7 +531,7 @@ function startJS(){
 	var windowWidth = $( window ).width();
     if(windowWidth < 860) {
         $('body').removeClass('control');
-       
+     
 	
 	}else{
         $('body').addClass('control');
@@ -555,8 +555,84 @@ startJS();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//json 관리
+var j=0;
+
+function call(){
+
+    $.ajax({//외부파일 호출 메소드
+        url : 'json/port.json',
+        type : 'GET', //POST
+        dataType : 'json',
+        success :function(data){
+            
+    var H3Txt,First,Second,Third,Fourth,Color,Title1,Title2,Title3,inner;
+   
+        // $(data.portfolio).each(function(i){
+           
+             console.log(j);
+            H3Txt = data.portfolio[j].h3Txt;
+            First = data.portfolio[j].first;
+            Second = data.portfolio[j].second;
+            Third = data.portfolio[j].third;
+            Fourth = data.portfolio[j].fourth;
+            Color = data.portfolio[j].color;
+            Src = data.portfolio[j].src;
+            
+            Title1 = data.portfolio[j].title1;
+            Title2 = data.portfolio[j].title2;
+            Title3 = data.portfolio[j].title3;
+           
+
+            inner="<h3>"+H3Txt+"</h3><p><span>"+First+"</span></p><p>"+Title1+"<span>"+Second+"</span></p><p>"+Title2+"<span>"+Third+"</span></p><p>"+Title3+"<span>"+Fourth+"<i>"+Color+"</i></span></p><a href="+Src+" targer='_blank'>바로가기</a>";
+            
+           
+            $('.port article .json').stop().append(inner);
+          
+        // });
+        
+        
+
+
+        }
+    
+    
+    });
+};
+
+//json 함수 호출
+call();
+$('.portmove button').eq(1).on('click',function(){
+    // $('.port article .json').remove();
+    $('.port article .json').children().remove();
+    call(j++);
+    // console.log(j);
+})
    
 })
+
+
+
+
+
+
+
+
+
 
 
 

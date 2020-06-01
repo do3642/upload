@@ -3,9 +3,9 @@
     overflow-y: auto; }
     .port > div::-webkit-scrollbar {
       width: 5px;
-      background: none; }
+      background: transparent; }
     .port > div::-webkit-scrollbar-track {
-      background-color: none; }
+      background: transparent; }
     .port > div::-webkit-scrollbar-thumb {
       background: #99ccff; }
     .port > div::-webkit-scrollbar-button {
