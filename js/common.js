@@ -270,6 +270,7 @@ window.addEventListener('DOMContentLoaded',function(){
         $('.ability .floor').on('mouseenter',function(){
             setTimeout(function(){
                 $('.trans ul').addClass('active')
+                $('.trans ul').slideDown();
             },2000);
         });
        
@@ -308,32 +309,25 @@ window.addEventListener('DOMContentLoaded',function(){
         $('.port div ul').eq(1).removeClass('active');
         
     }
-    function portReverse(){
-        $('.port').on('wheel',function(e){
-            if($('body').hasClass('controlPort')){
+    // function portReverse(){
+    //     $('.port').on('wheel',function(e){
+    //         if($('body').hasClass('controlPort')){
 
-                var delta = e.originalEvent.wheelDelta;
-                e.preventDefault();
-                e.stopPropagation();
-                if(delta <0){
-    
-                    movescroll('.ability',500);
-    
-                }else{
-                  
-                 movescroll('.container',500);
-                portReverse2();
-                }//엘스문
+    //             var delta = e.originalEvent.wheelDelta;
+              
+             
+    //             // portReverse2();
+            
 
 
 
-            }
+    //         }
            
           
  
-        });
-    }
-    portReverse()
+    //     });
+    // }
+    // portReverse()
 
 
 
@@ -345,7 +339,7 @@ window.addEventListener('DOMContentLoaded',function(){
       var bln=true;
      
          
-        $('.ability').on('wheel',function(e){
+        $('.ability ul').on('wheel',function(e){
             if($('body').hasClass('control')){
             e.preventDefault();
             e.stopPropagation();
@@ -583,8 +577,13 @@ function call(){
     var H3Txt,First,Second,Third,Fourth,Color,Title1,Title2,Title3,inner;
    
         // $(data.portfolio).each(function(i){
-           
-             console.log(j);
+            
+          if(j ==-1){
+              j=0;
+          }else if(j==$('.portmove span').length){
+              j=$('.portmove span').length-1;
+          }
+
             H3Txt = data.portfolio[j].h3Txt;
             First = data.portfolio[j].first;
             Second = data.portfolio[j].second;
@@ -602,11 +601,57 @@ function call(){
             
            
             $('.port article .json').stop().append(inner);
-          
-        // });
-        
-        
+      
+           
+            $('.port ul li').each(function(i){
+      
+                var src=$('.port li').eq(i).find('img').attr('src');
+                //초기 이미지 주소값
+                var Idx =src.indexOf('port')+5;
+                var lastIdx =src.lastIndexOf('port')-1;
+                // console.log(Idx);
+                //주소값에서 port의  인덱스를 찾음  4
+                var string=src.slice(Idx,lastIdx);
+                //   console.log(string);
+                //주소값에서 port의 인덱스+5 찾음 port/
+              
+                var k=['playstation','delmonte','management'];
+                //해당 위치에 넣을 txt
+                var re;
+               
+                //값이 지워지지않고 해당 위치에 쌓임
+               
+                // var del=src.replace('playstation','delmonte');
+                // var del2=src.replace('delmonte','playstation');
+              
+                $('.port li').eq(i).addClass('active');
+                function changesrc(ad,title){
+                    $('.port li').eq(i).find('img').attr('src',ad);
+                    $('.json >p i').removeClass();
+                    $('.json >p i').addClass(title);
+                }
 
+                setTimeout(function(){
+                    $('.port li').eq(i).removeClass('active');
+                },500)
+                if(j==0){
+                    re=src.replace(string,k[0]);
+                    changesrc(re,'playstation')
+  
+                }else if(j==1){
+                    // $('.port li').eq(i).find('img').attr('src',del2)
+                    re=src.replace(string,k[1]);
+                    changesrc(re,'delmonte')
+                }else if(j==2){
+                    re=src.replace(string,k[2]);
+                    changesrc(re,'management')
+                }
+
+              });
+            
+             
+              $('.port div').eq(2).find('i').text(j+1);
+          
 
         }
     
@@ -616,14 +661,59 @@ function call(){
 
 //json 함수 호출
 call();
-$('.portmove button').eq(1).on('click',function(){
-    // $('.port article .json').remove();
-    $('.port article .json').children().remove();
-    call(j++);
-    // console.log(j);
-})
+
+function portChange(){
+    var bln=true;
+    var control=true;
+
+    $('.portmove button').eq(1).on('click',function(){
+        if(bln){
+            $('.port article .json').children().remove();
+            call(j++);
+            bln=false;
+            console.log('aaaaaaaaaaaaaa')
+            setTimeout(function(){
+                bln=true;
+            },500)
+        }
+       
+
+    
+ });
    
-})
+         $('.portmove button').eq(0).on('click',function(){
+            if(bln){
+                $('.port article .json').children().remove();
+                call(j--);
+                bln=false;
+                console.log('aaaaaaaaaaaaaa')
+                setTimeout(function(){
+                    bln=true;
+                },500)
+            }
+           
+         });
+        
+    
+    
+    
+}
+portChange();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+});
 
 
 

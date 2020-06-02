@@ -513,6 +513,7 @@ nav{
 
 .port{
   width: 70%;
+  overflow: hidden;
   margin: 0 auto;
   display: flex;
   flex-direction: row-reverse;
@@ -576,10 +577,10 @@ nav{
      li{
        perspective: 900px;
       transition: .5s;
-       &:hover span{
+       &:hover >span{
          transform: translate(5%,-10%);
        }
-       &:hover span:after{
+       &:hover span span{
          height: 50%;
          opacity: 1;
         
@@ -609,22 +610,23 @@ nav{
       // &:nth-of-type(3) span:after{
       //   content: 'Sinill \AHTML/CSS/JS/Jquery';
       // }
-      span{
+      >span{
         min-width: 700px;
-        &:after{
-          content: 'Playstation \AHTML/CSS/JS/Jquery';
+        span{
           white-space: pre-line;
           color: #fff;
           position: absolute;left: 0;top: 0;
           @extend %wihe100;
-          height: 0;
+          height: 0%;
           transition: .5s;
           background-color: rgba(0,0,0,0.5);
           @extend %flexbasic;
           opacity: 0;
           text-align: center;
           font-size: 1rem;
-          
+        }
+        &:after{
+          // content: 'Playstation \AHTML/CSS/JS/Jquery';
          
         }
        
@@ -670,7 +672,10 @@ nav{
       background-color: rgba(51,51,51,.3);
       font-size: 0;
       position: relative;
-      
+      transition: 1s;
+      &.active{
+      animation: jsonani 1s forwards;
+      }
       
       span{
         position: relative;
@@ -695,6 +700,7 @@ nav{
     //   animation: portAni2 3.5s infinite;
     // }
     min-width: 450px;
+   
     background-color: #fff;
     box-shadow: -10px 0px 50px 3px #eee;
     display: flex;
@@ -714,7 +720,8 @@ nav{
       margin-bottom: 20px;
       
     }
-    div{
+    .json{
+     height: 700px;
       h3{
         font-size: 1.5em;
         font-weight: 300;
@@ -742,6 +749,12 @@ nav{
             background-color: rgba(95,175,255,0.5);
             border-radius: 45px;
           }
+          &.delmonte:after{
+            background-color: rgba(95,255,95,0.5);
+          }
+          &.management:after{
+            background-color: rgba(255,255,255,0.5);
+          }
         }
   
       }
@@ -764,7 +777,7 @@ nav{
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin: 0 auto;
+
       margin-top: 10px;
   
       button{
@@ -803,6 +816,7 @@ nav{
 
     div:last-of-type{
       margin-top: 10px;
+     
       p{
         text-align: center;
         i{
@@ -869,14 +883,15 @@ nav{
   ul{
   &.active{
     opacity: 1;
+    transform: rotateY(25deg) translateY(200px) translateZ(-100px)translateX(-1200px) scale(1);
   }
-  
+   
    opacity: 0;
     @extend %flexbasic;
     flex-direction: row-reverse;
     transition: 1s;
     margin-top: 15%;
-    transform: rotateY(25deg) translateY(200px) translateZ(-100px)translateX(-1200px); // x = point
+    transform: rotateY(25deg) translateY(200px) translateZ(-100px)translateX(-1200px) scale(0); // x = point
     transform-style: preserve-3d;
     position: relative;
     
