@@ -610,7 +610,7 @@ nav {
   .ability .trans {
     transform-style: preserve-3d;
     perspective: 500px;
-    transform: translateY(-200px);
+    transform: translateY(-300px);
     position: relative; }
     .ability .trans ul {
       opacity: 0;
@@ -626,7 +626,10 @@ nav {
       .ability .trans ul li {
         transform: translateX(300px) rotateY(-25deg);
         transform-origin: left;
-        transition: .5s; }
+        transition: .5s;
+        opacity: 0.2; }
+        .ability .trans ul li:nth-of-type(1) {
+          opacity: 1; }
         .ability .trans ul li p {
           font-size: 2em;
           padding-left: 7%; }

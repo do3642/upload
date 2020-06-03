@@ -876,7 +876,7 @@ nav{
   .trans{
     transform-style: preserve-3d;
     perspective: 500px;
-    transform: translateY(-200px); 
+    transform: translateY(-300px); 
     position: relative;
    
    
@@ -900,8 +900,10 @@ nav{
       transform: translateX(300px) rotateY(-25deg);
       transform-origin: left;
       transition: .5s;
-      
-     
+      opacity: 0.2;
+     &:nth-of-type(1){
+       opacity: 1;
+     }
       p{
         font-size: 2em;
       padding-left: 7%;

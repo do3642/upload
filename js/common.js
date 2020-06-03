@@ -154,7 +154,7 @@ window.addEventListener('DOMContentLoaded',function(){
 
 
 
-
+//네비 about페이지 벗어나면 fixed
             if(sTop < conTop){
                 $('nav').css({
                     position:'absolute'
