@@ -563,7 +563,7 @@ startJS();
 
 
 
-//json 관리
+//json 관리 / 포트폴리오 등록 관리
 var j=0;
 
 function call(){
@@ -579,9 +579,10 @@ function call(){
         // $(data.portfolio).each(function(i){
             
           if(j ==-1){
-              j=0;
+              j=2;
           }else if(j==$('.portmove span').length){
-              j=$('.portmove span').length-1;
+            //   j=$('.portmove span').length-1;
+            j=0;
           }
 
             H3Txt = data.portfolio[j].h3Txt;
@@ -608,11 +609,16 @@ function call(){
                 var src=$('.port li').eq(i).find('img').attr('src');
                 //초기 이미지 주소값
                 var Idx =src.indexOf('port')+5;
+                //port의 인덱스위치 값 img/port/ 니깐
+                // 4가 잡히고 +5를 해서 port/(여기)부분을 잡는다
                 var lastIdx =src.lastIndexOf('port')-1;
-                // console.log(Idx);
-                //주소값에서 port의  인덱스를 찾음  4
+                //port/playstation/port1.png  이런식임으로
+                //lastindex사용해서 뒤에서 port를 잡고 -1
+                //을해서 (여기)/port 부분을 잡는다
+               
                 var string=src.slice(Idx,lastIdx);
-                //   console.log(string);
+                // port/playstatin/port1.png
+                // port들의 사이 공간을 잡는다
                 //주소값에서 port의 인덱스+5 찾음 port/
               
                 var k=['playstation','delmonte','management'];
@@ -626,25 +632,42 @@ function call(){
               
                 $('.port li').eq(i).addClass('active');
                 function changesrc(ad,title){
+                    //매개변수를 받아서 json바뀔때 동적효과
                     $('.port li').eq(i).find('img').attr('src',ad);
                     $('.json >p i').removeClass();
                     $('.json >p i').addClass(title);
                 }
+                function hoverTxt(change){
+                  
+                   
+                    var changeTxt = change+'\nHTML/CSS/JS/Jquery';
+                    $('.port li span span').text(changeTxt);
+                    
+                }
+               
 
                 setTimeout(function(){
                     $('.port li').eq(i).removeClass('active');
                 },500)
                 if(j==0){
                     re=src.replace(string,k[0]);
-                    changesrc(re,'playstation')
+                    //비어있는 변수에 잘라진 인덱스를 잡음
+                    changesrc(re,'Playstation')
+                    //매개변수로 해당 텍스트 보내서 attr 변경
+                    hoverTxt('Playstation');
+                    //매개변수로 글씨 변경
+                    //추후 스킬 추가시 매개변수 늘리면 될듯
   
                 }else if(j==1){
                     // $('.port li').eq(i).find('img').attr('src',del2)
                     re=src.replace(string,k[1]);
-                    changesrc(re,'delmonte')
+                    changesrc(re,'Delmonte');
+                    hoverTxt('Delmonte');
                 }else if(j==2){
                     re=src.replace(string,k[2]);
-                    changesrc(re,'management')
+                    changesrc(re,'Management');
+                    hoverTxt('Management');
+
                 }
 
               });

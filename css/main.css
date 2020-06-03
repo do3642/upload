@@ -36,6 +36,12 @@ button {
   width: 100%;
   height: 100vh; }
 
+.svgclass {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); }
+
 #Logo {
   position: absolute;
   top: 0;
@@ -191,8 +197,8 @@ button {
   border: none; }
 
 h1 {
-  max-width: 130px;
-  height: 150px;
+  max-width: 7vw;
+  height: 8vw;
   position: absolute;
   left: 50%;
   top: 45%;

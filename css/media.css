@@ -79,10 +79,6 @@
   .floor {
     width: 60%; } }
 @media (max-width: 700px) {
-  h1 {
-    max-width: 100px;
-    height: 120px; }
-
   .port > div {
     display: none; }
   .port article {
@@ -92,10 +88,6 @@
   .port article .portmove span {
     height: 100px; } }
 @media (max-width: 550px) {
-  h1 {
-    max-width: 70px;
-    height: 90px; }
-
   .container h2 {
     display: block; }
 
@@ -187,10 +179,6 @@
     .floor.active {
       animation: radiusAni550 5s forwards; } }
 @media (max-width: 380px) {
-  h1 {
-    max-width: 50px;
-    height: 70px; }
-
   .floor {
     width: 50%;
     height: 20vh; }
