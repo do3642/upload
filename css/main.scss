@@ -1,6 +1,7 @@
 @import url("import.css");
 
 body{
+  // overflow: hidden;
   &::-webkit-scrollbar {
     width: 10px;
     background: transparent;
