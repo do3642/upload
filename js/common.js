@@ -33,11 +33,11 @@ window.addEventListener('DOMContentLoaded',function(){
     // 인트로 스크롤 락
     function lock(){
         $('.intro').on('scroll touchmove mousewheel', function(event) {
-            if($('body').hasClass('control')){
+            // if($('body').hasClass('control')){
                 event.preventDefault();
                 event.stopPropagation();
                 return false;
-            }
+            // }
           });
          
     }
