@@ -44,6 +44,7 @@ button{
   background-color: #000;
   width: 100%;
   height: 100vh;
+  touch-action:none;
 }
 
 
@@ -233,15 +234,6 @@ button{
  
   border: none;
 }
-h1{
-  max-width: 7vw;height: 8vw;
-  position: absolute;left: 50%;top: 45%;
-  transform: translate(-50%,-50%);
-}
-h1 img{
-  width: 100%;
-  height: 100%;
-}
 
 
 .effectDiv{
@@ -320,18 +312,20 @@ nav{
     li{
       display: inline-block;
       padding: 20px;
-      a{
+      button{
         padding: 20px;
         font-size: 1em;
         transition: .5s;
+        border: none;
+        background-color: transparent;
       }
-      &:hover a{
+      &:hover button{
         font-size: 1.1em;
         font-weight: bold;
         color: #333;
         letter-spacing: 5px;
       }
-      &.active a{
+      &.active button{
         color: rgba(153,204,255,1);
       }
     }

@@ -74,7 +74,8 @@
         flex-wrap: wrap; }
         .ability .trans ul li {
           transform: translateX(0) rotateY(0);
-          transform-origin: center; }
+          transform-origin: center;
+          opacity: 1; }
 
   .floor {
     width: 60%; } }

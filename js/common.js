@@ -652,7 +652,7 @@ function call(){
                 if(j==0){
                     re=src.replace(string,k[0]);
                     //비어있는 변수에 잘라진 인덱스를 잡음
-                    changesrc(re,'Playstation')
+                    changesrc(re,'playstation')
                     //매개변수로 해당 텍스트 보내서 attr 변경
                     hoverTxt('Playstation');
                     //매개변수로 글씨 변경
@@ -661,11 +661,11 @@ function call(){
                 }else if(j==1){
                     // $('.port li').eq(i).find('img').attr('src',del2)
                     re=src.replace(string,k[1]);
-                    changesrc(re,'Delmonte');
+                    changesrc(re,'delmonte');
                     hoverTxt('Delmonte');
                 }else if(j==2){
                     re=src.replace(string,k[2]);
-                    changesrc(re,'Management');
+                    changesrc(re,'management');
                     hoverTxt('Management');
 
                 }
@@ -694,7 +694,6 @@ function portChange(){
             $('.port article .json').children().remove();
             call(j++);
             bln=false;
-            console.log('aaaaaaaaaaaaaa')
             setTimeout(function(){
                 bln=true;
             },500)
@@ -709,7 +708,6 @@ function portChange(){
                 $('.port article .json').children().remove();
                 call(j--);
                 bln=false;
-                console.log('aaaaaaaaaaaaaa')
                 setTimeout(function(){
                     bln=true;
                 },500)

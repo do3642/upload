@@ -93,9 +93,7 @@
                 z-index: -1;
                 li{
                     padding: 2% 0;
-                    a{
-                        
-                    }
+                    
                 }
             }
         }
@@ -118,9 +116,7 @@
                 li{
                     transform: translateX(0) rotateY(0);
                     transform-origin: center;  
-                    figure{
-                       
-                    }
+                   opacity: 1;
                 }
             }
         }

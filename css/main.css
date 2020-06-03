@@ -34,7 +34,8 @@ button {
   overflow: hidden;
   background-color: #000;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  touch-action: none; }
 
 .svgclass {
   position: absolute;
@@ -196,18 +197,6 @@ button {
   color: #333;
   border: none; }
 
-h1 {
-  max-width: 7vw;
-  height: 8vw;
-  position: absolute;
-  left: 50%;
-  top: 45%;
-  transform: translate(-50%, -50%); }
-
-h1 img {
-  width: 100%;
-  height: 100%; }
-
 .effectDiv {
   width: 100%;
   height: 100%;
@@ -267,16 +256,18 @@ nav {
       nav div ul li {
         display: inline-block;
         padding: 20px; }
-        nav div ul li a {
+        nav div ul li button {
           padding: 20px;
           font-size: 1em;
-          transition: .5s; }
-        nav div ul li:hover a {
+          transition: .5s;
+          border: none;
+          background-color: transparent; }
+        nav div ul li:hover button {
           font-size: 1.1em;
           font-weight: bold;
           color: #333;
           letter-spacing: 5px; }
-        nav div ul li.active a {
+        nav div ul li.active button {
           color: #99ccff; }
   nav .bugger {
     display: none;
