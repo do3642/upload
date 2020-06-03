@@ -42,7 +42,7 @@ window.addEventListener('DOMContentLoaded',function(){
 //로드 됐을때 vh값을 픽셀로 담아줌
 // 모바일때 위아래 팝업으로 인해 크기가 바뀌는걸 방지
           var loadheight =$('.intro').height();
-          $('.intro,.about').css({
+          $('.intro,.about,.ability').css({
               height:loadheight
           })
          
