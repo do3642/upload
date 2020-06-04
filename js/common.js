@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded',function(){
 
     //네비버튼 클릭시 해당 텍스트 감지하여 스크롤 이동
     function navbtn(){
-        $('nav li a').on('click',function(e){
+        $('nav li button').on('click',function(e){
             e.preventDefault();
             if($(this).text() == 'Home'){
                 movescroll('.intro',500);
@@ -204,7 +204,12 @@ window.addEventListener('DOMContentLoaded',function(){
                 $('.aboutTxt dl').slideDown(1500);
                 setTimeout(function(){
                     $('nav').slideDown();
-                    
+                    if($('.aboutTxt button').hasClass('control')){
+                        $('.aboutTxt button').slideDown();
+                        $('.aboutTxt button').css({
+                            opacity:1
+                        });
+                    }
                     $('.aboutTxt dl').css({
                         transition:'2s'
                     });
@@ -257,7 +262,18 @@ window.addEventListener('DOMContentLoaded',function(){
                 },1500);
             },2000);
           
+           $('.aboutTxt button').eq(0).on('click',function(){
+            $('.aboutTxt dl').removeClass('active');
+            $('.aboutTxt dl').addClass('active2');
+            $('.port').removeClass('active');
            
+           });
+           $('.aboutTxt button').eq(1).on('click',function(){
+            $('.aboutTxt dl').addClass('active');
+            $('.aboutTxt dl').removeClass('active2');
+            $('.port').addClass('active');
+            
+           });
           
         })
 
@@ -467,8 +483,12 @@ m550.addListener(function(e){
             
             $('.port').removeClass('active');
             $('.aboutTxt dl dd').eq(1).slideUp();
+            $('.aboutTxt button').removeClass('control');
+            $('.aboutTxt button').slideUp();
     }else{
         $('.aboutTxt dl dd').slideDown();
+        $('.aboutTxt button').addClass('control');
+        $('.aboutTxt button').slideDown();
     }
 });
 
@@ -511,11 +531,17 @@ else{
 m1200.addListener(function(e){
     if(e.matches){
         $('body').removeClass('controlPort');
+        $('.aboutTxt button').addClass('control');
+        $('.aboutTxt button').slideDown();
+
+        
     }else{
         $('body').addClass('controlPort');
         $('.port >div').animate({ // 포트에 서브스크롤이 내려왔을때 데스크탑 환경에서 깨지는걸 방지
             scrollTop:0
         },0);
+        $('.aboutTxt button').removeClass('control');
+        $('.aboutTxt button').slideUp();
       
     
     }
@@ -528,11 +554,15 @@ m1200.addListener(function(e){
 
 
 function startJS(){
-	var windowWidth = $( window ).width();
+    var windowWidth = $( window ).width();
+    
+    if(windowWidth < 550){
+        $('.aboutTxt button').removeClass('control');
+    }else{
+        $('.aboutTxt button').addClass('control');
+    }
     if(windowWidth < 860) {
         $('body').removeClass('control');
-     
-	
 	}else{
         $('body').addClass('control');
     
@@ -542,8 +572,10 @@ function startJS(){
 
     if(windowWidth < 1200){
         $('body').removeClass('controlPort');
+        $('.aboutTxt button').addClass('control');
     }else{
         $('body').addClass('controlPort');
+        $('.aboutTxt button').removeClass('control');
     }
     
 
@@ -726,9 +758,6 @@ function portChange(){
     
 }
 portChange();
-
-
-
 
 
 

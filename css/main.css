@@ -338,6 +338,27 @@ nav {
   right: 15%;
   top: 50%;
   transform: translate(0, -50%); }
+  .aboutTxt button {
+    display: none;
+    opacity: 0;
+    position: absolute;
+    left: 100%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/icon/aboutarrow3.png");
+    background-size: cover;
+    z-index: 10; }
+    .aboutTxt button:first-of-type {
+      top: 35%; }
+      .aboutTxt button:first-of-type:hover {
+        animation: buttonAni1 .8s infinite alternate linear; }
+    .aboutTxt button:last-of-type {
+      top: 70%;
+      background-image: url("../img/icon/aboutarrow4.png"); }
+      .aboutTxt button:last-of-type:hover {
+        animation: buttonAni2 .8s infinite alternate linear; }
   .aboutTxt dl {
     display: none;
     width: 100%;
@@ -359,7 +380,7 @@ nav {
         opacity: 1;
         transform: rotate(0);
         right: 0;
-        top: 0; }
+        top: 10%; }
       .aboutTxt dl:nth-of-type(2).active2 {
         opacity: 0;
         transform: rotate(15deg);
