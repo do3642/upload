@@ -6,7 +6,7 @@
             "title1":"\n문제점\n",
             "second":" -같은 링크를 가진 분할된 네비가 존재함\n -세부 네비 또한 있다 없다 하며\n 페이지들이 쉽게 눈에 들어오지 않음\n -반응형 접근시 네비가 튀어나옴",
             "title2":"\n개선방향\n",
-            "third":"-사이트위주의 시선을 위해 메뉴는 초기부터 버거메뉴로 변경\n-페이지를간소화 하여 서브 페이지 통합\n -기존 이미지를 활용한 디자인 스타일,배치 개선",
+            "third":"-사이트 위주의 시선을 위해 메뉴는 버거메뉴로 변경\n-페이지를간소화 하여 서브 페이지 통합\n -기존 이미지를 활용한 디자인 스타일,배치 개선",
             "title3":"\n폰트/컬러\n",
             "fourth":"한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
             "color":"5fafff",
@@ -22,7 +22,7 @@
             "title3":"\n폰트/컬러\n",
             "fourth":"한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
             "color":"5fff5f",
-            "src":"https://do3642.github.io/playstation/"
+            "src":"https://do3642.github.io/delmonte/"
         },
 
     
@@ -35,7 +35,7 @@
             "title3":"\n폰트/컬러\n",
             "fourth":"한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
             "color":"ffffff",
-            "src":"https://do3642.github.io/playstation/"
+            "src":"https://do3642.github.io/upload/"
            }
    
 

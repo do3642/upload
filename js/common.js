@@ -615,11 +615,12 @@ function call(){
     var H3Txt,First,Second,Third,Fourth,Color,Title1,Title2,Title3,inner;
    
         // $(data.portfolio).each(function(i){
-            
+         
           if(j ==-1){
-              j=2;
+              j=$('.portmove span').length-1;
+              
           }else if(j==$('.portmove span').length){
-            //   j=$('.portmove span').length-1;
+           
             j=0;
           }
 
@@ -657,18 +658,16 @@ function call(){
                 var string=src.slice(Idx,lastIdx);
                 // port/playstatin/port1.png
                 // port들의 사이 공간을 잡는다
-                //주소값에서 port의 인덱스+5 찾음 port/
+               
               
                 var k=['playstation','delmonte','management'];
                 //해당 위치에 넣을 txt
                 var re;
                
-                //값이 지워지지않고 해당 위치에 쌓임
                
-                // var del=src.replace('playstation','delmonte');
-                // var del2=src.replace('delmonte','playstation');
-              
+               
                 $('.port li').eq(i).addClass('active');
+                //반짝임효과
                 function changesrc(ad,title){
                     //매개변수를 받아서 json바뀔때 동적효과
                     $('.port li').eq(i).find('img').attr('src',ad);
@@ -687,31 +686,38 @@ function call(){
                 setTimeout(function(){
                     $('.port li').eq(i).removeClass('active');
                 },500)
-                if(j==0){
-                    re=src.replace(string,k[0]);
-                    //비어있는 변수에 잘라진 인덱스를 잡음
-                    changesrc(re,'playstation')
-                    //매개변수로 해당 텍스트 보내서 attr 변경
-                    hoverTxt('Playstation');
-                    //매개변수로 글씨 변경
-                    //추후 스킬 추가시 매개변수 늘리면 될듯
-  
-                }else if(j==1){
-                    // $('.port li').eq(i).find('img').attr('src',del2)
-                    re=src.replace(string,k[1]);
-                    changesrc(re,'delmonte');
-                    hoverTxt('Delmonte');
-                }else if(j==2){
-                    re=src.replace(string,k[2]);
-                    changesrc(re,'management');
-                    hoverTxt('Management');
 
-                }
+                re=src.replace(string,k[j]);
+                  //비어있는 변수에 잘라진 인덱스를 잡음
+                changesrc(re,k[j]);
+                hoverTxt(k[j]);
+                // if(j==0){
+                //     re=src.replace(string,k[0]);
+                //     //비어있는 변수에 잘라진 인덱스를 잡음
+                //     changesrc(re,'playstation')
+                //     //매개변수로 해당 텍스트 보내서 attr 변경
+                //     hoverTxt('Playstation');
+                //     //매개변수로 글씨 변경
+                //     //추후 스킬 추가시 매개변수 늘리면 될듯
+  
+                // }else if(j==1){
+                //     // $('.port li').eq(i).find('img').attr('src',del2)
+                //     re=src.replace(string,k[1]);
+                //     changesrc(re,'delmonte');
+                //     hoverTxt('Delmonte');
+                // }else if(j==2){
+                //     re=src.replace(string,k[2]);
+                //     changesrc(re,'management');
+                //     hoverTxt('Management');
+
+                // }
 
               });
             
              
-              $('.port div').eq(2).find('i').text(j+1);
+              $('.port article div').eq(2).find('i').text(j+1);
+              $('.port article div').eq(2).find('span').text('/ '+$('.portmove span').length);
+
           
 
         }
