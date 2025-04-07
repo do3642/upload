@@ -398,7 +398,7 @@ nav {
         width: 16px;
         height: 16px; }
       .aboutTxt dl dd span:nth-of-type(even) img {
-        margin-left: 10px; }
+         }
 
 .port {
   width: 70%;
@@ -553,7 +553,8 @@ nav {
             bottom: 0;
             width: 100%;
             height: 10px;
-            background-color: rgba(95, 175, 255, 0.5);
+            /* background-color: rgba(95, 175, 255, 0.5); */
+            background-color: rgba(155, 213, 245, 0.5);
             border-radius: 45px; }
           .port article .json > p i.delmonte:after {
             background-color: rgba(95, 255, 95, 0.5); }
@@ -589,12 +590,24 @@ nav {
           background-repeat: no-repeat;
           background-size: 35px;
           margin-left: 10px; }
-      .port article .portmove span {
+        .portmove-box{
+          display: flex;
+          overflow-x: auto; /* 좌우 스크롤 생김 */
+          overflow-y: hidden;
+          scroll-behavior: smooth;
+          max-width: 600px; /* 원하는 너비로 조절 */
+          gap: 10px;
+          padding: 10px;
+          scrollbar-width: none; /* Firefox 스크롤 없애기 */
+          -ms-overflow-style: none; 
+        }
+      .port article .portmove .portmove-box span {
+        flex: 0 0 auto;
         width: 150px;
-        height: 50px;
+        height: 100px;
         margin: 0 5px;
         border: 1px solid #333; }
-    .port article div:last-of-type {
+    .port article div:last-child {
       margin-top: 10px; }
       .port article div:last-of-type p {
         text-align: center; }

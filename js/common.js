@@ -617,9 +617,9 @@ function call(){
         // $(data.portfolio).each(function(i){
          
           if(j ==-1){
-              j=$('.portmove span').length-1;
+              j=$('.portmove-box span').length-1;
               
-          }else if(j==$('.portmove span').length){
+          }else if(j==$('.portmove-box span').length){
            
             j=0;
           }
@@ -715,8 +715,8 @@ function call(){
               });
             
              
-              $('.port article div').eq(2).find('i').text(j+1);
-              $('.port article div').eq(2).find('span').text('/ '+$('.portmove span').length);
+              $('.port article div').eq(3).find('i').text(j+1);
+              $('.port article div').eq(3).find('span').text('/ '+$('.portmove span').length);
 
           
 
