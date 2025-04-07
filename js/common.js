@@ -617,9 +617,9 @@ function call(){
         // $(data.portfolio).each(function(i){
          
           if(j ==-1){
-              j=$('.portmove-box span').length-1;
+              j=$('.portmove-box div span').length-1;
               
-          }else if(j==$('.portmove-box span').length){
+          }else if(j==$('.portmove-box div span').length){
            
             j=0;
           }
@@ -715,10 +715,11 @@ function call(){
               });
             
              
-              $('.port article div').eq(3).find('i').text(j+1);
-              $('.port article div').eq(3).find('span').text('/ '+$('.portmove span').length);
+              $('.port article div').eq(4).find('i').text(j+1);
+              $('.port article div').eq(4).find('span').text('/ '+$('.portmove span').length);
 
           
+              $('.portmove-box div').css('transform', 'translateX(' + (-j * 47) + '%)');
 
         }
     
