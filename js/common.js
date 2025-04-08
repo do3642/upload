@@ -393,7 +393,7 @@ window.addEventListener('DOMContentLoaded',function(){
             
 
                 $('.trans ul').css({
-                    transform: 'rotateY(25deg) translateY(200px) translateZ(-100px)translateX('+ -(1200 - (idx * 500)) +'px)'
+                    transform: 'rotateY(25deg) translateY(200px) translateZ(-100px)translateX('+ -(2200 - (idx * 500)) +'px)'
                 });
 
                 $(".trans li").css({
@@ -787,14 +787,23 @@ portChange();
 
 
 
+// 나이 갱신 추가
+const birthDate = new Date('1995-06-22');
+const today = new Date();
 
+let age = today.getFullYear() - birthDate.getFullYear();
+const isBeforeBirthday =
+  today.getMonth() < birthDate.getMonth() ||
+  (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate());
 
+if (isBeforeBirthday) {
+  age--; // 아직 생일 안 지났으면 1살 빼기
+}
+
+document.getElementById('age').textContent = age;
 
 
 });
-
-
-
 
 
 

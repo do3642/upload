@@ -941,14 +941,14 @@ nav .bugger.Hover:hover span:nth-of-type(3) {
   flex-direction: row-reverse;
   transition: 1s;
   margin-top: 15%;
-  transform: rotateY(25deg) translateY(200px) translateZ(-100px) translateX(-1200px) scale(0);
+  transform: rotateY(25deg) translateY(200px) translateZ(-100px) translateX(-2200px) scale(0);
   transform-style: preserve-3d;
   position: relative;
 }
 
 .ability .trans ul.active {
   opacity: 1;
-  transform: rotateY(25deg) translateY(200px) translateZ(-100px) translateX(-1200px) scale(1);
+  transform: rotateY(25deg) translateY(200px) translateZ(-100px) translateX(-2200px) scale(1);
 }
 
 .ability .trans ul li {
