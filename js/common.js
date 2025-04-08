@@ -393,7 +393,7 @@ window.addEventListener('DOMContentLoaded',function(){
             
 
                 $('.trans ul').css({
-                    transform: 'rotateY(25deg) translateY(200px) translateZ(-100px)translateX('+ -(1200 - (idx * 500)) +'px)'
+                    transform: 'rotateY(25deg) translateY(200px) translateZ(-100px)translateX('+ -(2200 - (idx * 500)) +'px)'
                 });
 
                 $(".trans li").css({
@@ -617,9 +617,9 @@ function call(){
         // $(data.portfolio).each(function(i){
          
           if(j ==-1){
-              j=$('.portmove-box span').length-1;
+              j=$('.portmove-box div span').length-1;
               
-          }else if(j==$('.portmove-box span').length){
+          }else if(j==$('.portmove-box div span').length){
            
             j=0;
           }
@@ -660,7 +660,7 @@ function call(){
                 // port들의 사이 공간을 잡는다
                
               
-                var k=['playstation','delmonte','management'];
+                var k=['Soomha','HelloSeoul','CoronaMap','playstation','management'];
                 //해당 위치에 넣을 txt
                 var re;
                
@@ -675,11 +675,26 @@ function call(){
                     $('.json >p i').addClass(title);
                 }
                 function hoverTxt(change){
-                  
-                   
-                    var changeTxt = change+'\nHTML/CSS/JS/Jquery';
-                    $('.port li span span').text(changeTxt);
+                    const changeSkill = {
+                        0:'React/Python[Flask]',
+                        1:'React/Java[SpringBoot]',
+                        2:'Python[Flask]/Jinja2',
+                        3:'HTML/CSS/JS/jQuery',
+                        4:'HTML/SCSS/JS/jQuery'
+                    }
+                    const changeHref = {
+                        0: 'https://github.com/haaayeong/soomha-frontend',
+                        1: 'https://github.com/do3642/hello-seoul-frontend',
+                        2: 'https://github.com/do3642/corona',
+                        3: 'https://do3642.github.io/playstation/',
+                        4: 'https://do3642.github.io/upload/'
+                    };
                     
+                   
+                    var changeTxt = change+'\n'+changeSkill[j];
+                    $('.port li span span').text(changeTxt);
+
+                    $('.port li a').attr('href', changeHref[j]);
                 }
                
 
@@ -714,11 +729,12 @@ function call(){
 
               });
             
-             
-              $('.port article div').eq(3).find('i').text(j+1);
-              $('.port article div').eq(3).find('span').text('/ '+$('.portmove span').length);
+              
+              $('.port article div').eq(4).find('i').text(j+1);
+              $('.port article div').eq(4).find('span').text('/ '+$('.portmove span').length);
 
-          
+              // 버튼 클릭 시 목록 슬라이드 기능
+              $('.portmove-box div').css('transform', 'translateX(' + (-j * 57) + '%)');
 
         }
     
@@ -771,14 +787,23 @@ portChange();
 
 
 
+// 나이 갱신 추가
+const birthDate = new Date('1995-06-22');
+const today = new Date();
 
+let age = today.getFullYear() - birthDate.getFullYear();
+const isBeforeBirthday =
+  today.getMonth() < birthDate.getMonth() ||
+  (today.getMonth() === birthDate.getMonth() && today.getDate() < birthDate.getDate());
 
+if (isBeforeBirthday) {
+  age--; // 아직 생일 안 지났으면 1살 빼기
+}
+
+document.getElementById('age').textContent = age;
 
 
 });
-
-
-
 
 
 
