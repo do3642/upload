@@ -1056,6 +1056,12 @@ nav .bugger.Hover:hover span:nth-of-type(3) {
   height: 0;
 }
 
+.trans ul li figure span img{
+  object-fit: contain;
+}
+
+
+
 .contact {
   overflow: hidden;
   background-color: #000;
