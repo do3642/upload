@@ -1,44 +1,64 @@
-{ 
-    "portfolio":[
-
-        {"h3Txt":"PlayStation\n",
-            "first":"\n제작기간: 20/03/16 ~ 20/04/10\n참여율: 100%\n사용언어: HTML,CSS,JS/Jquery",
-            "title1":"\n문제점\n",
-            "second":" -같은 링크를 가진 분할된 네비가 존재함\n -세부 네비 또한 있다 없다 하며\n 페이지들이 쉽게 눈에 들어오지 않음\n -반응형 접근시 네비가 튀어나옴",
-            "title2":"\n개선방향\n",
-            "third":"-사이트 위주의 시선을 위해 메뉴는 버거메뉴로 변경\n-페이지를간소화 하여 서브 페이지 통합\n -기존 이미지를 활용한 디자인 스타일,배치 개선",
-            "title3":"\n폰트/컬러\n",
-            "fourth":"한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
-            "color":"5fafff",
-            "src":"https://do3642.github.io/playstation/"
-           },
-   
-        {"h3Txt":"Delmonte\n",
-            "first":"\n제작기간: 20/06/03 ~ 20/06/20\n참여율: 100%\n사용언어: HTML,CSS,JS/Jquery",
-            "title1":"\n문제점\n",
-            "second":" -텍스트와 이미지를 합쳐 데이터 활용도가 떨어짐\n-메인페이지 스크롤 시 움직임이 자연스럽지 않음\n -사용하지 않는 페이지가 존재\n -서브페이지 스크립트 동작시 푸터 부분이 깨짐",
-            "title2":"\n개선방향\n",
-            "third":"-이미지 텍스트 분리\n-기존 이미지를 활용한 디자인 스타일,배치 개선\n스크립트 동작 개선",
-            "title3":"\n폰트/컬러\n",
-            "fourth":"한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
-            "color":"5fff5f",
-            "src":"https://do3642.github.io/delmonte/"
+{
+    "portfolio": [
+        {
+            "h3Txt": "숨하\n",
+            "first": "\n제작기간: 25/02/03 ~ 25/02/21 (3주)\n미세먼지에 따른 놀이시설 및 건강예측 웹 사이트\n사용언어: React, Python[Flask]",
+            "title1": "\n문제점\n",
+            "second": "-놀이장소,미세먼지 api 불일치\n-네이버 이미지 api 검색오류\n-로딩속도 저하\n-실주소, 좌표값 다름",
+            "title2": "\n개선방향\n",
+            "third": "-다양한 api활용\n-상태코드 활용, 스켈레톤UI 활용\n- 이미지 사전에 db등록\n -주소검색 후 지도생성 실패 시 좌표로 예외처리",
+            "title3": "\n폰트/컬러\n",
+            "fourth": "폰트:Pretendard-Regular\n주색: #",
+            "color": "9bd5f5",
+            "src": "https://github.com/haaayeong/soomha-frontend"
         },
-
-    
-        {"h3Txt":"Management\n",
-            "first":"\n제작기간: 20/05/20 ~ 20/06/02\n참여율: 100%\n사용언어: HTML,CSS,JS/Jquery",
-            "title1":"\n중점 포인트\n",
-            "second":" -눈에 잘 들어오기 위해 입체감 조성\n -눈 피로감소를 위한 파스텔톤/흑백 위주의 컬러 사용\n -추후 포트폴리오 갯수 증가시 관리를 위한 Json 생성",
-            "title2":"\n어려웠던 점\n",
-            "third":"-반응형 작업 시 원페이지 형식의 제한\n -스크롤 기능 해제\n -반응형 작업 시 스크립트의 중복발생\n -transform 제어",
-            "title3":"\n폰트/컬러\n",
-            "fourth":"한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
-            "color":"ffffff",
-            "src":"https://do3642.github.io/upload/"
-           }
-   
-
-       
+        {
+            "h3Txt": "안녕,서울\n",
+            "first": "\n제작기간: 25/01/02 ~ 25/01/21 (3주)\n서울 관광지 소개에 대한 지도 및 다국어 지원\n사용언어: React, Java[SpringBoot]",
+            "title1": "\n문제점\n",
+            "second": " -로딩바 잦은 랜더링,날씨 호출 시 순차적 생성\n-존재하지 않는 api 필드값\n-join시 데이터가 없는 컬럼 오류\n-이전 기능이 유지되는 현상",
+            "title2": "\n개선방향\n",
+            "third": "-에니메이션 활용\n-병렬 호출 처리\n-자체적 조건 및 leftjoin활용\n-모듈스코프를 사용하여 반복되는 함수 구현",
+            "title3": "\n폰트/컬러\n",
+            "fourth": "폰트:Pretendard-Regular\n주색: #",
+            "color": "007BFF",
+            "src": "https://github.com/do3642/hello-seoul-frontend"
+        },
+        {
+            "h3Txt": "코로나맵\n",
+            "first": "\n제작기간: 24/12/09 ~ 24/12/30 (3주)\n전국, 전세계 코로나 감염률 현황 대시보드\n사용언어: Python[Flask],jinja2",
+            "title1": "\n문제점\n",
+            "second": " -지도 호출시 레이아웃 무너짐\n-결측값 제거 시에도 NaN 오류 발생\n-데이터 처리속도 저하 및 확장성",
+            "title2": "\n개선방향\n",
+            "third": "-클라이언트에서 지도생성, 데이터는 서버에서 관리\n-데이터 임의 수정\n-반복문 최소화, 계산후 처리값 미리반환\n-index를 넣어 조회속도 향상",
+            "title3": "\n폰트/컬러\n",
+            "fourth": "폰트:GmarketSansMedium\n위험,증가:붉은계열\n감소:푸른계열",
+            "color": "",
+            "src": "https://github.com/do3642/corona"
+        },
+        {
+            "h3Txt": "PlayStation\n",
+            "first": "\n제작기간: 20/03/16 ~ 20/04/10\n기존 사이트 리뉴얼\n사용언어: HTML,CSS,JS/Jquery",
+            "title1": "\n문제점\n",
+            "second": " -같은 링크를 가진 분할된 네비가 존재함\n -세부 네비 또한 있다 없다 하며\n 페이지들이 쉽게 눈에 들어오지 않음\n -반응형 접근시 네비가 튀어나옴",
+            "title2": "\n개선방향\n",
+            "third": "-사이트 위주의 시선을 위해 메뉴는 버거메뉴로 변경\n-페이지를간소화 하여 서브 페이지 통합\n -기존 이미지를 활용한 디자인 스타일,배치 개선",
+            "title3": "\n폰트/컬러\n",
+            "fourth": "한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
+            "color": "5fafff",
+            "src": "https://do3642.github.io/playstation/"
+        },
+        {
+            "h3Txt": "Management\n",
+            "first": "\n제작기간: 20/05/20 ~ 20/06/02\n자기 소개 포트폴리오\n사용언어: HTML,CSS,JS/Jquery",
+            "title1": "\n중점 포인트\n",
+            "second": " -눈에 잘 들어오기 위해 입체감 조성\n -눈 피로감소를 위한 파스텔톤/흑백 위주의 컬러 사용\n -추후 포트폴리오 갯수 증가시 관리를 위한 Json 생성",
+            "title2": "\n어려웠던 점\n",
+            "third": "-반응형 작업 시 원페이지 형식의 제한\n -스크롤 기능 해제\n -반응형 작업 시 스크립트의 중복발생\n -transform 제어",
+            "title3": "\n폰트/컬러\n",
+            "fourth": "한글:Noto Sans KR\n 영문:Noto Serif KR\n주색: #",
+            "color": "ffffff",
+            "src": "https://do3642.github.io/upload/"
+        }
     ]
 }
