@@ -1115,6 +1115,9 @@ nav .bugger.Hover:hover span:nth-of-type(3) {
   width: 25px;
   margin: 0 5px;
 }
+#age{
+  color: #333;
+}
 
 footer {
   height: 100px;
